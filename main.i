@@ -787,6 +787,8 @@
 # 0 "<command-line>"
 #define VK_USE_PLATFORM_WAYLAND_KHR 1
 # 0 "<command-line>"
+#define _DEBUG 1
+# 0 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 19 "/usr/include/stdc-predef.h" 3 4
 #define _STDC_PREDEF_H 1
@@ -800,139 +802,9 @@
 #define __STDC_ISO_10646__ 201706L
 # 0 "<command-line>" 2
 # 1 "main.c"
-# 1 "/usr/include/vulkan/vulkan.h" 1 3 4
-
-#define VULKAN_H_ 1
-
-
-
-
-
-
-
-# 1 "/usr/include/vulkan/vk_platform.h" 1 3 4
-# 12 "/usr/include/vulkan/vk_platform.h" 3 4
-#define VK_PLATFORM_H_ 
-# 56 "/usr/include/vulkan/vk_platform.h" 3 4
-#define VKAPI_ATTR 
-#define VKAPI_CALL 
-#define VKAPI_PTR 
-
-
-
-# 1 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 1 3 4
-# 39 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#define _STDDEF_H 
-#define _STDDEF_H_ 
-
-#define _ANSI_STDDEF_H 
-# 132 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#define _PTRDIFF_T 
-#define _T_PTRDIFF_ 
-#define _T_PTRDIFF 
-#define __PTRDIFF_T 
-#define _PTRDIFF_T_ 
-#define _BSD_PTRDIFF_T_ 
-#define ___int_ptrdiff_t_h 
-#define _GCC_PTRDIFF_T 
-#define _PTRDIFF_T_DECLARED 
-#define __DEFINED_ptrdiff_t 
-
-
-
-
-# 145 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-typedef long int ptrdiff_t;
-# 158 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#undef __need_ptrdiff_t
-# 185 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#define __size_t__ 
-#define __SIZE_T__ 
-#define _SIZE_T 
-#define _SYS_SIZE_T_H 
-#define _T_SIZE_ 
-#define _T_SIZE 
-#define __SIZE_T 
-#define _SIZE_T_ 
-#define _BSD_SIZE_T_ 
-#define _SIZE_T_DEFINED_ 
-#define _SIZE_T_DEFINED 
-#define _BSD_SIZE_T_DEFINED_ 
-#define _SIZE_T_DECLARED 
-#define __DEFINED_size_t 
-#define ___int_size_t_h 
-#define _GCC_SIZE_T 
-#define _SIZET_ 
-
-
-
-
-
-
-#define __size_t 
-
-
-
-
-
-typedef long unsigned int size_t;
-# 237 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#undef __need_size_t
-# 267 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#define __wchar_t__ 
-#define __WCHAR_T__ 
-#define _WCHAR_T 
-#define _T_WCHAR_ 
-#define _T_WCHAR 
-#define __WCHAR_T 
-#define _WCHAR_T_ 
-#define _BSD_WCHAR_T_ 
-#define _WCHAR_T_DEFINED_ 
-#define _WCHAR_T_DEFINED 
-#define _WCHAR_T_H 
-#define ___int_wchar_t_h 
-#define __INT_WCHAR_T_H 
-#define _GCC_WCHAR_T 
-#define _WCHAR_T_DECLARED 
-#define __DEFINED_wchar_t 
-# 295 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#undef _BSD_WCHAR_T_
-# 329 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-typedef int wchar_t;
-# 349 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#undef __need_wchar_t
-# 399 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#undef NULL
-
-
-
-
-#define NULL ((void *)0)
-
-
-
-
-
-#undef __need_NULL
-
-
-
-
-#undef offsetof
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 63 "/usr/include/vulkan/vk_platform.h" 2 3 4
-# 76 "/usr/include/vulkan/vk_platform.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h" 1 3 4
-# 9 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h" 3 4
-# 1 "/usr/include/stdint.h" 1 3 4
-# 23 "/usr/include/stdint.h" 3 4
-#define _STDINT_H 1
-
-#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION 
-# 1 "/usr/include/bits/libc-header-start.h" 1 3 4
-# 31 "/usr/include/bits/libc-header-start.h" 3 4
-#undef __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION
-
+# 1 "/usr/include/assert.h" 1 3 4
+# 34 "/usr/include/assert.h" 3 4
+#define _ASSERT_H 1
 # 1 "/usr/include/features.h" 1 3 4
 # 19 "/usr/include/features.h" 3 4
 #define _FEATURES_H 1
@@ -1357,7 +1229,50 @@ typedef int wchar_t;
 #define __stub_stty 
 # 11 "/usr/include/gnu/stubs.h" 2 3 4
 # 549 "/usr/include/features.h" 2 3 4
-# 34 "/usr/include/bits/libc-header-start.h" 2 3 4
+# 36 "/usr/include/assert.h" 2 3 4
+
+
+
+
+#define __ASSERT_VOID_CAST (void)
+# 64 "/usr/include/assert.h" 3 4
+
+
+
+
+# 67 "/usr/include/assert.h" 3 4
+extern void __assert_fail (const char *__assertion, const char *__file,
+      unsigned int __line, const char *__function)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__)) __attribute__ ((__cold__));
+
+
+extern void __assert_perror_fail (int __errnum, const char *__file,
+      unsigned int __line, const char *__function)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__)) __attribute__ ((__cold__));
+
+
+
+
+extern void __assert (const char *__assertion, const char *__file, int __line)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__)) __attribute__ ((__cold__));
+
+
+
+# 105 "/usr/include/assert.h" 3 4
+#define assert(expr) ((expr) ? __ASSERT_VOID_CAST (0) : __assert_fail (#expr, __FILE__, __LINE__, __ASSERT_FUNCTION))
+# 137 "/usr/include/assert.h" 3 4
+#define __ASSERT_FUNCTION __extension__ __PRETTY_FUNCTION__
+# 2 "main.c" 2
+# 1 "/usr/include/stdio.h" 1 3 4
+# 25 "/usr/include/stdio.h" 3 4
+#define _STDIO_H 1
+
+#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION 
+# 1 "/usr/include/bits/libc-header-start.h" 1 3 4
+# 31 "/usr/include/bits/libc-header-start.h" 3 4
+#undef __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION
+
+
 
 
 
@@ -1411,7 +1326,73 @@ typedef int wchar_t;
 
 
 #define __GLIBC_USE_IEC_60559_TYPES_EXT 0
-# 27 "/usr/include/stdint.h" 2 3 4
+# 29 "/usr/include/stdio.h" 2 3 4
+
+
+
+#define __need_size_t 
+#define __need_NULL 
+# 1 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 1 3 4
+# 185 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#define __size_t__ 
+#define __SIZE_T__ 
+#define _SIZE_T 
+#define _SYS_SIZE_T_H 
+#define _T_SIZE_ 
+#define _T_SIZE 
+#define __SIZE_T 
+#define _SIZE_T_ 
+#define _BSD_SIZE_T_ 
+#define _SIZE_T_DEFINED_ 
+#define _SIZE_T_DEFINED 
+#define _BSD_SIZE_T_DEFINED_ 
+#define _SIZE_T_DECLARED 
+#define __DEFINED_size_t 
+#define ___int_size_t_h 
+#define _GCC_SIZE_T 
+#define _SIZET_ 
+
+
+
+
+
+
+#define __size_t 
+
+
+
+
+
+typedef long unsigned int size_t;
+# 237 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#undef __need_size_t
+# 399 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#undef NULL
+
+
+
+
+#define NULL ((void *)0)
+
+
+
+
+
+#undef __need_NULL
+# 35 "/usr/include/stdio.h" 2 3 4
+
+#define __need___va_list 
+# 1 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdarg.h" 1 3 4
+# 34 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdarg.h" 3 4
+#undef __need___va_list
+
+
+
+
+#define __GNUC_VA_LIST 
+typedef __builtin_va_list __gnuc_va_list;
+# 38 "/usr/include/stdio.h" 2 3 4
+
 # 1 "/usr/include/bits/types.h" 1 3 4
 # 24 "/usr/include/bits/types.h" 3 4
 #define _BITS_TYPES_H 1
@@ -1679,7 +1660,710 @@ typedef unsigned int __socklen_t;
 typedef int __sig_atomic_t;
 # 226 "/usr/include/bits/types.h" 3 4
 #undef __STD_TYPE
-# 28 "/usr/include/stdint.h" 2 3 4
+# 40 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/bits/types/__fpos_t.h" 1 3 4
+
+#define _____fpos_t_defined 1
+
+
+# 1 "/usr/include/bits/types/__mbstate_t.h" 1 3 4
+
+#define ____mbstate_t_defined 1
+# 13 "/usr/include/bits/types/__mbstate_t.h" 3 4
+typedef struct
+{
+  int __count;
+  union
+  {
+    unsigned int __wch;
+    char __wchb[4];
+  } __value;
+} __mbstate_t;
+# 6 "/usr/include/bits/types/__fpos_t.h" 2 3 4
+
+
+
+
+typedef struct _G_fpos_t
+{
+  __off_t __pos;
+  __mbstate_t __state;
+} __fpos_t;
+# 41 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/bits/types/__fpos64_t.h" 1 3 4
+
+#define _____fpos64_t_defined 1
+
+
+
+
+
+
+
+typedef struct _G_fpos64_t
+{
+  __off64_t __pos;
+  __mbstate_t __state;
+} __fpos64_t;
+# 42 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/bits/types/__FILE.h" 1 3 4
+
+#define ____FILE_defined 1
+
+struct _IO_FILE;
+typedef struct _IO_FILE __FILE;
+# 43 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/bits/types/FILE.h" 1 3 4
+
+#define __FILE_defined 1
+
+struct _IO_FILE;
+
+
+typedef struct _IO_FILE FILE;
+# 44 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/bits/types/struct_FILE.h" 1 3 4
+# 20 "/usr/include/bits/types/struct_FILE.h" 3 4
+#define __struct_FILE_defined 1
+# 36 "/usr/include/bits/types/struct_FILE.h" 3 4
+struct _IO_FILE;
+struct _IO_marker;
+struct _IO_codecvt;
+struct _IO_wide_data;
+
+
+
+
+typedef void _IO_lock_t;
+
+
+
+
+
+struct _IO_FILE
+{
+  int _flags;
+
+
+  char *_IO_read_ptr;
+  char *_IO_read_end;
+  char *_IO_read_base;
+  char *_IO_write_base;
+  char *_IO_write_ptr;
+  char *_IO_write_end;
+  char *_IO_buf_base;
+  char *_IO_buf_end;
+
+
+  char *_IO_save_base;
+  char *_IO_backup_base;
+  char *_IO_save_end;
+
+  struct _IO_marker *_markers;
+
+  struct _IO_FILE *_chain;
+
+  int _fileno;
+  int _flags2:24;
+
+  char _short_backupbuf[1];
+  __off_t _old_offset;
+
+
+  unsigned short _cur_column;
+  signed char _vtable_offset;
+  char _shortbuf[1];
+
+  _IO_lock_t *_lock;
+
+
+
+
+
+
+
+  __off64_t _offset;
+
+  struct _IO_codecvt *_codecvt;
+  struct _IO_wide_data *_wide_data;
+  struct _IO_FILE *_freeres_list;
+  void *_freeres_buf;
+  struct _IO_FILE **_prevchain;
+  int _mode;
+
+  char _unused2[15 * sizeof (int) - 5 * sizeof (void *)];
+};
+
+
+#define __getc_unlocked_body(_fp) (__glibc_unlikely ((_fp)->_IO_read_ptr >= (_fp)->_IO_read_end) ? __uflow (_fp) : *(unsigned char *) (_fp)->_IO_read_ptr++)
+
+
+
+#define __putc_unlocked_body(_ch,_fp) (__glibc_unlikely ((_fp)->_IO_write_ptr >= (_fp)->_IO_write_end) ? __overflow (_fp, (unsigned char) (_ch)) : (unsigned char) (*(_fp)->_IO_write_ptr++ = (_ch)))
+
+
+
+
+#define _IO_EOF_SEEN 0x0010
+#define __feof_unlocked_body(_fp) (((_fp)->_flags & _IO_EOF_SEEN) != 0)
+
+#define _IO_ERR_SEEN 0x0020
+#define __ferror_unlocked_body(_fp) (((_fp)->_flags & _IO_ERR_SEEN) != 0)
+
+#define _IO_USER_LOCK 0x8000
+# 45 "/usr/include/stdio.h" 2 3 4
+# 85 "/usr/include/stdio.h" 3 4
+typedef __fpos_t fpos_t;
+# 94 "/usr/include/stdio.h" 3 4
+#define _IOFBF 0
+#define _IOLBF 1
+#define _IONBF 2
+
+
+
+#define BUFSIZ 8192
+
+
+
+
+#define EOF (-1)
+
+
+
+
+#define SEEK_SET 0
+#define SEEK_CUR 1
+#define SEEK_END 2
+# 124 "/usr/include/stdio.h" 3 4
+#define L_tmpnam 20
+#define TMP_MAX 238328
+
+
+
+# 1 "/usr/include/bits/stdio_lim.h" 1 3 4
+# 20 "/usr/include/bits/stdio_lim.h" 3 4
+#define _BITS_STDIO_LIM_H 1
+
+
+
+
+
+#define FILENAME_MAX 4096
+# 130 "/usr/include/stdio.h" 2 3 4
+# 138 "/usr/include/stdio.h" 3 4
+#undef FOPEN_MAX
+#define FOPEN_MAX 16
+# 149 "/usr/include/stdio.h" 3 4
+extern FILE *stdin;
+extern FILE *stdout;
+extern FILE *stderr;
+
+#define stdin stdin
+#define stdout stdout
+#define stderr stderr
+
+
+extern int remove (const char *__filename) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int rename (const char *__old, const char *__new) __attribute__ ((__nothrow__ , __leaf__));
+# 184 "/usr/include/stdio.h" 3 4
+extern int fclose (FILE *__stream) __attribute__ ((__nonnull__ (1)));
+
+#undef __attr_dealloc_fclose
+#define __attr_dealloc_fclose __attr_dealloc (fclose, 1)
+
+
+
+
+
+
+extern FILE *tmpfile (void)
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+# 211 "/usr/include/stdio.h" 3 4
+extern char *tmpnam (char[20]) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 236 "/usr/include/stdio.h" 3 4
+extern int fflush (FILE *__stream);
+# 264 "/usr/include/stdio.h" 3 4
+extern FILE *fopen (const char *__restrict __filename,
+      const char *__restrict __modes)
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
+
+
+
+
+extern FILE *freopen (const char *__restrict __filename,
+        const char *__restrict __modes,
+        FILE *__restrict __stream) __attribute__ ((__nonnull__ (3)));
+# 334 "/usr/include/stdio.h" 3 4
+extern void setbuf (FILE *__restrict __stream, char *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__))
+  __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
+      int __modes, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 357 "/usr/include/stdio.h" 3 4
+extern int fprintf (FILE *__restrict __stream,
+      const char *__restrict __format, ...) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int printf (const char *__restrict __format, ...);
+
+extern int sprintf (char *__restrict __s,
+      const char *__restrict __format, ...) __attribute__ ((__nothrow__));
+
+
+
+
+
+extern int vfprintf (FILE *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int vprintf (const char *__restrict __format, __gnuc_va_list __arg);
+
+extern int vsprintf (char *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg) __attribute__ ((__nothrow__));
+
+
+
+extern int snprintf (char *__restrict __s, size_t __maxlen,
+       const char *__restrict __format, ...)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 4)));
+
+extern int vsnprintf (char *__restrict __s, size_t __maxlen,
+        const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 0)));
+# 422 "/usr/include/stdio.h" 3 4
+extern int fscanf (FILE *__restrict __stream,
+     const char *__restrict __format, ...) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int scanf (const char *__restrict __format, ...) ;
+
+extern int sscanf (const char *__restrict __s,
+     const char *__restrict __format, ...) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+# 1 "/usr/include/bits/floatn.h" 1 3 4
+# 20 "/usr/include/bits/floatn.h" 3 4
+#define _BITS_FLOATN_H 
+# 33 "/usr/include/bits/floatn.h" 3 4
+#define __HAVE_FLOAT128 1
+
+
+
+
+
+
+
+#define __HAVE_DISTINCT_FLOAT128 1
+
+
+
+
+
+
+
+#define __HAVE_FLOAT64X 1
+
+
+
+
+
+#define __HAVE_FLOAT64X_LONG_DOUBLE 1
+# 68 "/usr/include/bits/floatn.h" 3 4
+#define __f128(x) x ##f128
+# 82 "/usr/include/bits/floatn.h" 3 4
+#define __CFLOAT128 _Complex _Float128
+# 127 "/usr/include/bits/floatn.h" 3 4
+# 1 "/usr/include/bits/floatn-common.h" 1 3 4
+# 21 "/usr/include/bits/floatn-common.h" 3 4
+#define _BITS_FLOATN_COMMON_H 
+
+
+# 1 "/usr/include/bits/long-double.h" 1 3 4
+# 21 "/usr/include/bits/long-double.h" 3 4
+#define __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI 0
+# 25 "/usr/include/bits/floatn-common.h" 2 3 4
+# 34 "/usr/include/bits/floatn-common.h" 3 4
+#define __HAVE_FLOAT16 0
+#define __HAVE_FLOAT32 1
+#define __HAVE_FLOAT64 1
+#define __HAVE_FLOAT32X 1
+#define __HAVE_FLOAT128X 0
+# 52 "/usr/include/bits/floatn-common.h" 3 4
+#define __HAVE_DISTINCT_FLOAT16 __HAVE_FLOAT16
+#define __HAVE_DISTINCT_FLOAT32 0
+#define __HAVE_DISTINCT_FLOAT64 0
+#define __HAVE_DISTINCT_FLOAT32X 0
+#define __HAVE_DISTINCT_FLOAT64X 0
+#define __HAVE_DISTINCT_FLOAT128X __HAVE_FLOAT128X
+
+
+
+
+
+#define __HAVE_FLOAT128_UNLIKE_LDBL (__HAVE_DISTINCT_FLOAT128 && __LDBL_MANT_DIG__ != 113)
+
+
+
+
+
+
+#define __HAVE_FLOATN_NOT_TYPEDEF 1
+# 93 "/usr/include/bits/floatn-common.h" 3 4
+#define __f32(x) x ##f32
+# 105 "/usr/include/bits/floatn-common.h" 3 4
+#define __f64(x) x ##f64
+
+
+
+
+
+
+
+#define __f32x(x) x ##f32x
+# 125 "/usr/include/bits/floatn-common.h" 3 4
+#define __f64x(x) x ##f64x
+# 151 "/usr/include/bits/floatn-common.h" 3 4
+#define __CFLOAT32 _Complex _Float32
+# 163 "/usr/include/bits/floatn-common.h" 3 4
+#define __CFLOAT64 _Complex _Float64
+
+
+
+
+
+
+
+#define __CFLOAT32X _Complex _Float32x
+# 183 "/usr/include/bits/floatn-common.h" 3 4
+#define __CFLOAT64X _Complex _Float64x
+# 128 "/usr/include/bits/floatn.h" 2 3 4
+# 438 "/usr/include/stdio.h" 2 3 4
+# 463 "/usr/include/stdio.h" 3 4
+extern int fscanf (FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("" "__isoc99_fscanf")
+
+                                __attribute__ ((__nonnull__ (1)));
+extern int scanf (const char *__restrict __format, ...) __asm__ ("" "__isoc99_scanf")
+                              ;
+extern int sscanf (const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("" "__isoc99_sscanf") __attribute__ ((__nothrow__ , __leaf__))
+
+                      ;
+# 490 "/usr/include/stdio.h" 3 4
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format,
+      __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 2, 0))) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+
+
+extern int vsscanf (const char *__restrict __s,
+      const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 540 "/usr/include/stdio.h" 3 4
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vfscanf")
+
+
+
+     __attribute__ ((__format__ (__scanf__, 2, 0))) __attribute__ ((__nonnull__ (1)));
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vscanf")
+
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+extern int vsscanf (const char *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vsscanf") __attribute__ ((__nothrow__ , __leaf__))
+
+
+
+     __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 575 "/usr/include/stdio.h" 3 4
+extern int fgetc (FILE *__stream) __attribute__ ((__nonnull__ (1)));
+extern int getc (FILE *__stream) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int getchar (void);
+# 611 "/usr/include/stdio.h" 3 4
+extern int fputc (int __c, FILE *__stream) __attribute__ ((__nonnull__ (2)));
+extern int putc (int __c, FILE *__stream) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+extern int putchar (int __c);
+# 654 "/usr/include/stdio.h" 3 4
+extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+     __attribute__ ((__access__ (__write_only__, 1, 2))) __attribute__ ((__nonnull__ (3)));
+# 667 "/usr/include/stdio.h" 3 4
+extern char *gets (char *__s) __attribute__ ((__deprecated__));
+# 707 "/usr/include/stdio.h" 3 4
+extern int fputs (const char *__restrict __s, FILE *__restrict __stream)
+  __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+extern int puts (const char *__s);
+
+
+
+
+
+
+extern int ungetc (int __c, FILE *__stream) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+extern size_t fread (void *__restrict __ptr, size_t __size,
+       size_t __n, FILE *__restrict __stream)
+  __attribute__ ((__nonnull__ (4)));
+
+
+
+
+extern size_t fwrite (const void *__restrict __ptr, size_t __size,
+        size_t __n, FILE *__restrict __s) __attribute__ ((__nonnull__ (4)));
+# 769 "/usr/include/stdio.h" 3 4
+extern int fseek (FILE *__stream, long int __off, int __whence)
+  __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern long int ftell (FILE *__stream) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern void rewind (FILE *__stream) __attribute__ ((__nonnull__ (1)));
+# 819 "/usr/include/stdio.h" 3 4
+extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos)
+  __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int fsetpos (FILE *__stream, const fpos_t *__pos) __attribute__ ((__nonnull__ (1)));
+# 850 "/usr/include/stdio.h" 3 4
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+extern int feof (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+extern int ferror (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 868 "/usr/include/stdio.h" 3 4
+extern void perror (const char *__s) __attribute__ ((__cold__));
+# 949 "/usr/include/stdio.h" 3 4
+extern int __uflow (FILE *);
+extern int __overflow (FILE *, int);
+# 966 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/bits/stdio.h" 1 3 4
+# 20 "/usr/include/bits/stdio.h" 3 4
+#define _BITS_STDIO_H 1
+# 29 "/usr/include/bits/stdio.h" 3 4
+#define __STDIO_INLINE __extern_inline
+# 38 "/usr/include/bits/stdio.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) int
+vprintf (const char *__restrict __fmt, __gnuc_va_list __arg)
+{
+  return vfprintf (stdout, __fmt, __arg);
+}
+
+
+
+extern __inline __attribute__ ((__gnu_inline__)) int
+getchar (void)
+{
+  return getc (stdin);
+}
+# 81 "/usr/include/bits/stdio.h" 3 4
+extern __inline __attribute__ ((__gnu_inline__)) int
+putchar (int __c)
+{
+  return putc (__c, stdout);
+}
+# 193 "/usr/include/bits/stdio.h" 3 4
+#undef __STDIO_INLINE
+# 967 "/usr/include/stdio.h" 2 3 4
+
+
+
+
+
+
+
+# 3 "main.c" 2
+# 1 "/usr/include/vulkan/vulkan_core.h" 1 3 4
+
+#define VULKAN_CORE_H_ 1
+# 23 "/usr/include/vulkan/vulkan_core.h" 3 4
+#define VK_VERSION_1_0 1
+# 1 "/usr/include/vulkan/vk_platform.h" 1 3 4
+# 12 "/usr/include/vulkan/vk_platform.h" 3 4
+#define VK_PLATFORM_H_ 
+# 56 "/usr/include/vulkan/vk_platform.h" 3 4
+#define VKAPI_ATTR 
+#define VKAPI_CALL 
+#define VKAPI_PTR 
+
+
+
+# 1 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 1 3 4
+# 39 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#define _STDDEF_H 
+#define _STDDEF_H_ 
+
+#define _ANSI_STDDEF_H 
+# 132 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#define _PTRDIFF_T 
+#define _T_PTRDIFF_ 
+#define _T_PTRDIFF 
+#define __PTRDIFF_T 
+#define _PTRDIFF_T_ 
+#define _BSD_PTRDIFF_T_ 
+#define ___int_ptrdiff_t_h 
+#define _GCC_PTRDIFF_T 
+#define _PTRDIFF_T_DECLARED 
+#define __DEFINED_ptrdiff_t 
+
+
+
+typedef long int ptrdiff_t;
+# 158 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#undef __need_ptrdiff_t
+# 237 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#undef __need_size_t
+# 267 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#define __wchar_t__ 
+#define __WCHAR_T__ 
+#define _WCHAR_T 
+#define _T_WCHAR_ 
+#define _T_WCHAR 
+#define __WCHAR_T 
+#define _WCHAR_T_ 
+#define _BSD_WCHAR_T_ 
+#define _WCHAR_T_DEFINED_ 
+#define _WCHAR_T_DEFINED 
+#define _WCHAR_T_H 
+#define ___int_wchar_t_h 
+#define __INT_WCHAR_T_H 
+#define _GCC_WCHAR_T 
+#define _WCHAR_T_DECLARED 
+#define __DEFINED_wchar_t 
+# 295 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#undef _BSD_WCHAR_T_
+# 329 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+typedef int wchar_t;
+# 349 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#undef __need_wchar_t
+# 399 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
+#undef NULL
+
+
+
+
+#define NULL ((void *)0)
+
+
+
+
+
+#undef __need_NULL
+
+
+
+
+#undef offsetof
+#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+# 63 "/usr/include/vulkan/vk_platform.h" 2 3 4
+# 76 "/usr/include/vulkan/vk_platform.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h" 1 3 4
+# 9 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h" 3 4
+# 1 "/usr/include/stdint.h" 1 3 4
+# 23 "/usr/include/stdint.h" 3 4
+#define _STDINT_H 1
+
+#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION 
+# 1 "/usr/include/bits/libc-header-start.h" 1 3 4
+# 31 "/usr/include/bits/libc-header-start.h" 3 4
+#undef __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION
+
+
+
+
+
+#undef __GLIBC_USE_LIB_EXT2
+
+
+
+
+#define __GLIBC_USE_LIB_EXT2 0
+# 67 "/usr/include/bits/libc-header-start.h" 3 4
+#undef __GLIBC_USE_IEC_60559_BFP_EXT
+
+
+
+#define __GLIBC_USE_IEC_60559_BFP_EXT 0
+
+#undef __GLIBC_USE_IEC_60559_BFP_EXT_C23
+
+
+
+#define __GLIBC_USE_IEC_60559_BFP_EXT_C23 0
+
+#undef __GLIBC_USE_IEC_60559_EXT
+
+
+
+#define __GLIBC_USE_IEC_60559_EXT 0
+
+
+
+
+
+
+#undef __GLIBC_USE_IEC_60559_FUNCS_EXT
+
+
+
+#define __GLIBC_USE_IEC_60559_FUNCS_EXT 0
+
+#undef __GLIBC_USE_IEC_60559_FUNCS_EXT_C23
+
+
+
+#define __GLIBC_USE_IEC_60559_FUNCS_EXT_C23 0
+
+
+
+
+#undef __GLIBC_USE_IEC_60559_TYPES_EXT
+
+
+
+#define __GLIBC_USE_IEC_60559_TYPES_EXT 0
+# 27 "/usr/include/stdint.h" 2 3 4
+
 # 1 "/usr/include/bits/wchar.h" 1 3 4
 # 20 "/usr/include/bits/wchar.h" 3 4
 #define _BITS_WCHAR_H 1
@@ -1924,13 +2608,7 @@ typedef __uintmax_t uintmax_t;
 
 #define _GCC_WRAP_STDINT_H 
 # 77 "/usr/include/vulkan/vk_platform.h" 2 3 4
-# 11 "/usr/include/vulkan/vulkan.h" 2 3 4
-# 1 "/usr/include/vulkan/vulkan_core.h" 1 3 4
-
-#define VULKAN_CORE_H_ 1
-# 23 "/usr/include/vulkan/vulkan_core.h" 3 4
-#define VK_VERSION_1_0 1
-
+# 25 "/usr/include/vulkan/vulkan_core.h" 2 3 4
 
 #define VK_DEFINE_HANDLE(object) typedef struct object ##_T* object;
 
@@ -24743,6 +25421,12 @@ typedef void ( *PFN_vkCmdDrawMeshTasksIndirectCountEXT)(VkCommandBuffer commandB
     VkDeviceSize countBufferOffset,
     uint32_t maxDrawCount,
     uint32_t stride);
+# 4 "main.c" 2
+# 1 "/usr/include/vulkan/vulkan.h" 1 3 4
+
+#define VULKAN_H_ 1
+# 11 "/usr/include/vulkan/vulkan.h" 3 4
+# 1 "/usr/include/vulkan/vulkan_core.h" 1 3 4
 # 12 "/usr/include/vulkan/vulkan.h" 2 3 4
 # 41 "/usr/include/vulkan/vulkan.h" 3 4
 # 1 "/usr/include/vulkan/vulkan_wayland.h" 1 3 4
@@ -24776,704 +25460,7 @@ typedef VkBool32 ( *PFN_vkGetPhysicalDeviceWaylandPresentationSupportKHR)(VkPhys
     uint32_t queueFamilyIndex,
     struct wl_display* display);
 # 42 "/usr/include/vulkan/vulkan.h" 2 3 4
-# 2 "main.c" 2
-# 1 "/usr/include/assert.h" 1 3 4
-# 34 "/usr/include/assert.h" 3 4
-#define _ASSERT_H 1
-
-
-
-
-
-#define __ASSERT_VOID_CAST (void)
-# 64 "/usr/include/assert.h" 3 4
-
-
-
-extern void __assert_fail (const char *__assertion, const char *__file,
-      unsigned int __line, const char *__function)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__)) __attribute__ ((__cold__));
-
-
-extern void __assert_perror_fail (int __errnum, const char *__file,
-      unsigned int __line, const char *__function)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__)) __attribute__ ((__cold__));
-
-
-
-
-extern void __assert (const char *__assertion, const char *__file, int __line)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__)) __attribute__ ((__cold__));
-
-
-
-# 105 "/usr/include/assert.h" 3 4
-#define assert(expr) ((expr) ? __ASSERT_VOID_CAST (0) : __assert_fail (#expr, __FILE__, __LINE__, __ASSERT_FUNCTION))
-# 137 "/usr/include/assert.h" 3 4
-#define __ASSERT_FUNCTION __extension__ __PRETTY_FUNCTION__
-# 3 "main.c" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 25 "/usr/include/stdio.h" 3 4
-#define _STDIO_H 1
-
-#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION 
-# 1 "/usr/include/bits/libc-header-start.h" 1 3 4
-# 31 "/usr/include/bits/libc-header-start.h" 3 4
-#undef __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION
-
-
-
-
-
-#undef __GLIBC_USE_LIB_EXT2
-
-
-
-
-#define __GLIBC_USE_LIB_EXT2 0
-# 67 "/usr/include/bits/libc-header-start.h" 3 4
-#undef __GLIBC_USE_IEC_60559_BFP_EXT
-
-
-
-#define __GLIBC_USE_IEC_60559_BFP_EXT 0
-
-#undef __GLIBC_USE_IEC_60559_BFP_EXT_C23
-
-
-
-#define __GLIBC_USE_IEC_60559_BFP_EXT_C23 0
-
-#undef __GLIBC_USE_IEC_60559_EXT
-
-
-
-#define __GLIBC_USE_IEC_60559_EXT 0
-
-
-
-
-
-
-#undef __GLIBC_USE_IEC_60559_FUNCS_EXT
-
-
-
-#define __GLIBC_USE_IEC_60559_FUNCS_EXT 0
-
-#undef __GLIBC_USE_IEC_60559_FUNCS_EXT_C23
-
-
-
-#define __GLIBC_USE_IEC_60559_FUNCS_EXT_C23 0
-
-
-
-
-#undef __GLIBC_USE_IEC_60559_TYPES_EXT
-
-
-
-#define __GLIBC_USE_IEC_60559_TYPES_EXT 0
-# 29 "/usr/include/stdio.h" 2 3 4
-
-
-
-#define __need_size_t 
-#define __need_NULL 
-# 1 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 1 3 4
-# 158 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#undef __need_ptrdiff_t
-# 237 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#undef __need_size_t
-# 349 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#undef __need_wchar_t
-# 399 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h" 3 4
-#undef NULL
-
-
-
-
-#define NULL ((void *)0)
-
-
-
-
-
-#undef __need_NULL
-
-
-
-
-#undef offsetof
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 35 "/usr/include/stdio.h" 2 3 4
-
-#define __need___va_list 
-# 1 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdarg.h" 1 3 4
-# 34 "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdarg.h" 3 4
-#undef __need___va_list
-
-
-
-
-#define __GNUC_VA_LIST 
-typedef __builtin_va_list __gnuc_va_list;
-# 38 "/usr/include/stdio.h" 2 3 4
-
-
-# 1 "/usr/include/bits/types/__fpos_t.h" 1 3 4
-
-#define _____fpos_t_defined 1
-
-
-# 1 "/usr/include/bits/types/__mbstate_t.h" 1 3 4
-
-#define ____mbstate_t_defined 1
-# 13 "/usr/include/bits/types/__mbstate_t.h" 3 4
-typedef struct
-{
-  int __count;
-  union
-  {
-    unsigned int __wch;
-    char __wchb[4];
-  } __value;
-} __mbstate_t;
-# 6 "/usr/include/bits/types/__fpos_t.h" 2 3 4
-
-
-
-
-typedef struct _G_fpos_t
-{
-  __off_t __pos;
-  __mbstate_t __state;
-} __fpos_t;
-# 41 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/bits/types/__fpos64_t.h" 1 3 4
-
-#define _____fpos64_t_defined 1
-
-
-
-
-
-
-
-typedef struct _G_fpos64_t
-{
-  __off64_t __pos;
-  __mbstate_t __state;
-} __fpos64_t;
-# 42 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/bits/types/__FILE.h" 1 3 4
-
-#define ____FILE_defined 1
-
-struct _IO_FILE;
-typedef struct _IO_FILE __FILE;
-# 43 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/bits/types/FILE.h" 1 3 4
-
-#define __FILE_defined 1
-
-struct _IO_FILE;
-
-
-typedef struct _IO_FILE FILE;
-# 44 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/bits/types/struct_FILE.h" 1 3 4
-# 20 "/usr/include/bits/types/struct_FILE.h" 3 4
-#define __struct_FILE_defined 1
-# 36 "/usr/include/bits/types/struct_FILE.h" 3 4
-struct _IO_FILE;
-struct _IO_marker;
-struct _IO_codecvt;
-struct _IO_wide_data;
-
-
-
-
-typedef void _IO_lock_t;
-
-
-
-
-
-struct _IO_FILE
-{
-  int _flags;
-
-
-  char *_IO_read_ptr;
-  char *_IO_read_end;
-  char *_IO_read_base;
-  char *_IO_write_base;
-  char *_IO_write_ptr;
-  char *_IO_write_end;
-  char *_IO_buf_base;
-  char *_IO_buf_end;
-
-
-  char *_IO_save_base;
-  char *_IO_backup_base;
-  char *_IO_save_end;
-
-  struct _IO_marker *_markers;
-
-  struct _IO_FILE *_chain;
-
-  int _fileno;
-  int _flags2:24;
-
-  char _short_backupbuf[1];
-  __off_t _old_offset;
-
-
-  unsigned short _cur_column;
-  signed char _vtable_offset;
-  char _shortbuf[1];
-
-  _IO_lock_t *_lock;
-
-
-
-
-
-
-
-  __off64_t _offset;
-
-  struct _IO_codecvt *_codecvt;
-  struct _IO_wide_data *_wide_data;
-  struct _IO_FILE *_freeres_list;
-  void *_freeres_buf;
-  struct _IO_FILE **_prevchain;
-  int _mode;
-
-  char _unused2[15 * sizeof (int) - 5 * sizeof (void *)];
-};
-
-
-#define __getc_unlocked_body(_fp) (__glibc_unlikely ((_fp)->_IO_read_ptr >= (_fp)->_IO_read_end) ? __uflow (_fp) : *(unsigned char *) (_fp)->_IO_read_ptr++)
-
-
-
-#define __putc_unlocked_body(_ch,_fp) (__glibc_unlikely ((_fp)->_IO_write_ptr >= (_fp)->_IO_write_end) ? __overflow (_fp, (unsigned char) (_ch)) : (unsigned char) (*(_fp)->_IO_write_ptr++ = (_ch)))
-
-
-
-
-#define _IO_EOF_SEEN 0x0010
-#define __feof_unlocked_body(_fp) (((_fp)->_flags & _IO_EOF_SEEN) != 0)
-
-#define _IO_ERR_SEEN 0x0020
-#define __ferror_unlocked_body(_fp) (((_fp)->_flags & _IO_ERR_SEEN) != 0)
-
-#define _IO_USER_LOCK 0x8000
-# 45 "/usr/include/stdio.h" 2 3 4
-# 85 "/usr/include/stdio.h" 3 4
-typedef __fpos_t fpos_t;
-# 94 "/usr/include/stdio.h" 3 4
-#define _IOFBF 0
-#define _IOLBF 1
-#define _IONBF 2
-
-
-
-#define BUFSIZ 8192
-
-
-
-
-#define EOF (-1)
-
-
-
-
-#define SEEK_SET 0
-#define SEEK_CUR 1
-#define SEEK_END 2
-# 124 "/usr/include/stdio.h" 3 4
-#define L_tmpnam 20
-#define TMP_MAX 238328
-
-
-
-# 1 "/usr/include/bits/stdio_lim.h" 1 3 4
-# 20 "/usr/include/bits/stdio_lim.h" 3 4
-#define _BITS_STDIO_LIM_H 1
-
-
-
-
-
-#define FILENAME_MAX 4096
-# 130 "/usr/include/stdio.h" 2 3 4
-# 138 "/usr/include/stdio.h" 3 4
-#undef FOPEN_MAX
-#define FOPEN_MAX 16
-# 149 "/usr/include/stdio.h" 3 4
-extern FILE *stdin;
-extern FILE *stdout;
-extern FILE *stderr;
-
-#define stdin stdin
-#define stdout stdout
-#define stderr stderr
-
-
-extern int remove (const char *__filename) __attribute__ ((__nothrow__ , __leaf__));
-
-extern int rename (const char *__old, const char *__new) __attribute__ ((__nothrow__ , __leaf__));
-# 184 "/usr/include/stdio.h" 3 4
-extern int fclose (FILE *__stream) __attribute__ ((__nonnull__ (1)));
-
-#undef __attr_dealloc_fclose
-#define __attr_dealloc_fclose __attr_dealloc (fclose, 1)
-
-
-
-
-
-
-extern FILE *tmpfile (void)
-  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
-# 211 "/usr/include/stdio.h" 3 4
-extern char *tmpnam (char[20]) __attribute__ ((__nothrow__ , __leaf__)) ;
-# 236 "/usr/include/stdio.h" 3 4
-extern int fflush (FILE *__stream);
-# 264 "/usr/include/stdio.h" 3 4
-extern FILE *fopen (const char *__restrict __filename,
-      const char *__restrict __modes)
-  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;
-
-
-
-
-extern FILE *freopen (const char *__restrict __filename,
-        const char *__restrict __modes,
-        FILE *__restrict __stream) __attribute__ ((__nonnull__ (3)));
-# 334 "/usr/include/stdio.h" 3 4
-extern void setbuf (FILE *__restrict __stream, char *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__))
-  __attribute__ ((__nonnull__ (1)));
-
-
-
-extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
-      int __modes, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-# 357 "/usr/include/stdio.h" 3 4
-extern int fprintf (FILE *__restrict __stream,
-      const char *__restrict __format, ...) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-extern int printf (const char *__restrict __format, ...);
-
-extern int sprintf (char *__restrict __s,
-      const char *__restrict __format, ...) __attribute__ ((__nothrow__));
-
-
-
-
-
-extern int vfprintf (FILE *__restrict __s, const char *__restrict __format,
-       __gnuc_va_list __arg) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-extern int vprintf (const char *__restrict __format, __gnuc_va_list __arg);
-
-extern int vsprintf (char *__restrict __s, const char *__restrict __format,
-       __gnuc_va_list __arg) __attribute__ ((__nothrow__));
-
-
-
-extern int snprintf (char *__restrict __s, size_t __maxlen,
-       const char *__restrict __format, ...)
-     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 4)));
-
-extern int vsnprintf (char *__restrict __s, size_t __maxlen,
-        const char *__restrict __format, __gnuc_va_list __arg)
-     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 0)));
-# 422 "/usr/include/stdio.h" 3 4
-extern int fscanf (FILE *__restrict __stream,
-     const char *__restrict __format, ...) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-extern int scanf (const char *__restrict __format, ...) ;
-
-extern int sscanf (const char *__restrict __s,
-     const char *__restrict __format, ...) __attribute__ ((__nothrow__ , __leaf__));
-
-
-
-
-
-# 1 "/usr/include/bits/floatn.h" 1 3 4
-# 20 "/usr/include/bits/floatn.h" 3 4
-#define _BITS_FLOATN_H 
-# 33 "/usr/include/bits/floatn.h" 3 4
-#define __HAVE_FLOAT128 1
-
-
-
-
-
-
-
-#define __HAVE_DISTINCT_FLOAT128 1
-
-
-
-
-
-
-
-#define __HAVE_FLOAT64X 1
-
-
-
-
-
-#define __HAVE_FLOAT64X_LONG_DOUBLE 1
-# 68 "/usr/include/bits/floatn.h" 3 4
-#define __f128(x) x ##f128
-# 82 "/usr/include/bits/floatn.h" 3 4
-#define __CFLOAT128 _Complex _Float128
-# 127 "/usr/include/bits/floatn.h" 3 4
-# 1 "/usr/include/bits/floatn-common.h" 1 3 4
-# 21 "/usr/include/bits/floatn-common.h" 3 4
-#define _BITS_FLOATN_COMMON_H 
-
-
-# 1 "/usr/include/bits/long-double.h" 1 3 4
-# 21 "/usr/include/bits/long-double.h" 3 4
-#define __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI 0
-# 25 "/usr/include/bits/floatn-common.h" 2 3 4
-# 34 "/usr/include/bits/floatn-common.h" 3 4
-#define __HAVE_FLOAT16 0
-#define __HAVE_FLOAT32 1
-#define __HAVE_FLOAT64 1
-#define __HAVE_FLOAT32X 1
-#define __HAVE_FLOAT128X 0
-# 52 "/usr/include/bits/floatn-common.h" 3 4
-#define __HAVE_DISTINCT_FLOAT16 __HAVE_FLOAT16
-#define __HAVE_DISTINCT_FLOAT32 0
-#define __HAVE_DISTINCT_FLOAT64 0
-#define __HAVE_DISTINCT_FLOAT32X 0
-#define __HAVE_DISTINCT_FLOAT64X 0
-#define __HAVE_DISTINCT_FLOAT128X __HAVE_FLOAT128X
-
-
-
-
-
-#define __HAVE_FLOAT128_UNLIKE_LDBL (__HAVE_DISTINCT_FLOAT128 && __LDBL_MANT_DIG__ != 113)
-
-
-
-
-
-
-#define __HAVE_FLOATN_NOT_TYPEDEF 1
-# 93 "/usr/include/bits/floatn-common.h" 3 4
-#define __f32(x) x ##f32
-# 105 "/usr/include/bits/floatn-common.h" 3 4
-#define __f64(x) x ##f64
-
-
-
-
-
-
-
-#define __f32x(x) x ##f32x
-# 125 "/usr/include/bits/floatn-common.h" 3 4
-#define __f64x(x) x ##f64x
-# 151 "/usr/include/bits/floatn-common.h" 3 4
-#define __CFLOAT32 _Complex _Float32
-# 163 "/usr/include/bits/floatn-common.h" 3 4
-#define __CFLOAT64 _Complex _Float64
-
-
-
-
-
-
-
-#define __CFLOAT32X _Complex _Float32x
-# 183 "/usr/include/bits/floatn-common.h" 3 4
-#define __CFLOAT64X _Complex _Float64x
-# 128 "/usr/include/bits/floatn.h" 2 3 4
-# 438 "/usr/include/stdio.h" 2 3 4
-# 463 "/usr/include/stdio.h" 3 4
-extern int fscanf (FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("" "__isoc99_fscanf")
-
-                                __attribute__ ((__nonnull__ (1)));
-extern int scanf (const char *__restrict __format, ...) __asm__ ("" "__isoc99_scanf")
-                              ;
-extern int sscanf (const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("" "__isoc99_sscanf") __attribute__ ((__nothrow__ , __leaf__))
-
-                      ;
-# 490 "/usr/include/stdio.h" 3 4
-extern int vfscanf (FILE *__restrict __s, const char *__restrict __format,
-      __gnuc_va_list __arg)
-     __attribute__ ((__format__ (__scanf__, 2, 0))) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
-     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
-
-
-extern int vsscanf (const char *__restrict __s,
-      const char *__restrict __format, __gnuc_va_list __arg)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format__ (__scanf__, 2, 0)));
-# 540 "/usr/include/stdio.h" 3 4
-extern int vfscanf (FILE *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vfscanf")
-
-
-
-     __attribute__ ((__format__ (__scanf__, 2, 0))) __attribute__ ((__nonnull__ (1)));
-extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vscanf")
-
-     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
-extern int vsscanf (const char *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vsscanf") __attribute__ ((__nothrow__ , __leaf__))
-
-
-
-     __attribute__ ((__format__ (__scanf__, 2, 0)));
-# 575 "/usr/include/stdio.h" 3 4
-extern int fgetc (FILE *__stream) __attribute__ ((__nonnull__ (1)));
-extern int getc (FILE *__stream) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-extern int getchar (void);
-# 611 "/usr/include/stdio.h" 3 4
-extern int fputc (int __c, FILE *__stream) __attribute__ ((__nonnull__ (2)));
-extern int putc (int __c, FILE *__stream) __attribute__ ((__nonnull__ (2)));
-
-
-
-
-
-extern int putchar (int __c);
-# 654 "/usr/include/stdio.h" 3 4
-extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
-     __attribute__ ((__access__ (__write_only__, 1, 2))) __attribute__ ((__nonnull__ (3)));
-# 667 "/usr/include/stdio.h" 3 4
-extern char *gets (char *__s) __attribute__ ((__deprecated__));
-# 707 "/usr/include/stdio.h" 3 4
-extern int fputs (const char *__restrict __s, FILE *__restrict __stream)
-  __attribute__ ((__nonnull__ (2)));
-
-
-
-
-
-extern int puts (const char *__s);
-
-
-
-
-
-
-extern int ungetc (int __c, FILE *__stream) __attribute__ ((__nonnull__ (2)));
-
-
-
-
-
-
-extern size_t fread (void *__restrict __ptr, size_t __size,
-       size_t __n, FILE *__restrict __stream)
-  __attribute__ ((__nonnull__ (4)));
-
-
-
-
-extern size_t fwrite (const void *__restrict __ptr, size_t __size,
-        size_t __n, FILE *__restrict __s) __attribute__ ((__nonnull__ (4)));
-# 769 "/usr/include/stdio.h" 3 4
-extern int fseek (FILE *__stream, long int __off, int __whence)
-  __attribute__ ((__nonnull__ (1)));
-
-
-
-
-extern long int ftell (FILE *__stream) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-extern void rewind (FILE *__stream) __attribute__ ((__nonnull__ (1)));
-# 819 "/usr/include/stdio.h" 3 4
-extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos)
-  __attribute__ ((__nonnull__ (1)));
-
-
-
-
-extern int fsetpos (FILE *__stream, const fpos_t *__pos) __attribute__ ((__nonnull__ (1)));
-# 850 "/usr/include/stdio.h" 3 4
-extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-
-extern int feof (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-
-extern int ferror (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-# 868 "/usr/include/stdio.h" 3 4
-extern void perror (const char *__s) __attribute__ ((__cold__));
-# 949 "/usr/include/stdio.h" 3 4
-extern int __uflow (FILE *);
-extern int __overflow (FILE *, int);
-# 966 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/bits/stdio.h" 1 3 4
-# 20 "/usr/include/bits/stdio.h" 3 4
-#define _BITS_STDIO_H 1
-# 29 "/usr/include/bits/stdio.h" 3 4
-#define __STDIO_INLINE __extern_inline
-# 38 "/usr/include/bits/stdio.h" 3 4
-extern __inline __attribute__ ((__gnu_inline__)) int
-vprintf (const char *__restrict __fmt, __gnuc_va_list __arg)
-{
-  return vfprintf (stdout, __fmt, __arg);
-}
-
-
-
-extern __inline __attribute__ ((__gnu_inline__)) int
-getchar (void)
-{
-  return getc (stdin);
-}
-# 81 "/usr/include/bits/stdio.h" 3 4
-extern __inline __attribute__ ((__gnu_inline__)) int
-putchar (int __c)
-{
-  return putc (__c, stdout);
-}
-# 193 "/usr/include/bits/stdio.h" 3 4
-#undef __STDIO_INLINE
-# 967 "/usr/include/stdio.h" 2 3 4
-
-
-
-
-
-
-
-# 4 "main.c" 2
+# 5 "main.c" 2
 #define GLFW_EXPOSE_NATIVE_WAYLAND 
 # 1 "/usr/include/GLFW/glfw3.h" 1 3 4
 # 30 "/usr/include/GLFW/glfw3.h" 3 4
@@ -38117,7 +38104,7 @@ typedef struct GLFWallocator
  int glfwGetPhysicalDevicePresentationSupport(VkInstance instance, VkPhysicalDevice device, uint32_t queuefamily);
 # 6510 "/usr/include/GLFW/glfw3.h" 3 4
  VkResult glfwCreateWindowSurface(VkInstance instance, GLFWwindow* window, const VkAllocationCallbacks* allocator, VkSurfaceKHR* surface);
-# 6 "main.c" 2
+# 7 "main.c" 2
 # 1 "/usr/include/GLFW/glfw3native.h" 1 3 4
 # 30 "/usr/include/GLFW/glfw3native.h" 3 4
 #define _glfw3_native_h_ 
@@ -43730,7 +43717,7 @@ wl_subsurface_set_desync(struct wl_subsurface *wl_subsurface)
  struct wl_output* glfwGetWaylandMonitor(GLFWmonitor* monitor);
 # 533 "/usr/include/GLFW/glfw3native.h" 3 4
  struct wl_surface* glfwGetWaylandWindow(GLFWwindow* window);
-# 7 "main.c" 2
+# 8 "main.c" 2
 
 
 #define VK_CHECK(call) do { VkResult result_ = call; assert(result_ == VK_SUCCESS); } while (0)
@@ -43740,154 +43727,163 @@ wl_subsurface_set_desync(struct wl_subsurface *wl_subsurface)
 
 
 
-# 15 "main.c"
-VkInstance createInstance() {
+# 16 "main.c"
+VkInstance
+create_instance() {
 
-  VkApplicationInfo appInfo = {
-      .sType = VK_STRUCTURE_TYPE_APPLICATION_INFO,
-      .apiVersion = 
-# 19 "main.c" 3 4
-                   ((((uint32_t)(0)) << 29U) | (((uint32_t)(1)) << 22U) | (((uint32_t)(1)) << 12U) | ((uint32_t)(0)))
-# 19 "main.c"
-                                     ,
-  };
+    VkApplicationInfo appInfo = {
+        .sType = VK_STRUCTURE_TYPE_APPLICATION_INFO,
+        .apiVersion = 
+# 21 "main.c" 3 4
+                      ((((uint32_t)(0)) << 29U) | (((uint32_t)(1)) << 22U) | (((uint32_t)(4)) << 12U) | ((uint32_t)(0)))
+# 21 "main.c"
+                                        ,
+    };
 
-  VkInstanceCreateInfo createInfo = {
-      .sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO,
-      .pApplicationInfo = &appInfo,
-  };
-# 34 "main.c"
-  const char *extensions[] = {
-      
-# 35 "main.c" 3 4
-     "VK_KHR_surface"
-# 35 "main.c"
-                                  ,
+    VkInstanceCreateInfo createInfo = {
+        .sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO,
+        .pApplicationInfo = &appInfo,
+    };
 
 
+    const char* debugLayers[] = {"VK_LAYER_KHRONOS_validation"};
+
+    createInfo.ppEnabledLayerNames = debugLayers;
+    createInfo.enabledLayerCount = sizeof(debugLayers) / sizeof(debugLayers[0]);
 
 
-      
-# 40 "main.c" 3 4
-     "VK_KHR_wayland_surface"
-# 40 "main.c"
-                                          ,
+    const char* extensions[] = {
+        
+# 37 "main.c" 3 4
+       "VK_KHR_surface"
+# 37 "main.c"
+                                    ,
 
-  };
 
-  createInfo.ppEnabledExtensionNames = extensions;
-  createInfo.enabledExtensionCount = sizeof(extensions) / sizeof(extensions[0]);
 
-  VkInstance instance = 0;
-  do { VkResult result_ = vkCreateInstance(&createInfo, 0, &instance); 
-# 48 "main.c" 3 4
- ((
-# 48 "main.c"
- result_ == VK_SUCCESS
-# 48 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 48 "main.c"
- "result_ == VK_SUCCESS"
-# 48 "main.c" 3 4
- , "main.c", 48, __extension__ __PRETTY_FUNCTION__))
-# 48 "main.c"
- ; } while (0);
 
-  return instance;
+        
+# 42 "main.c" 3 4
+       "VK_KHR_wayland_surface"
+# 42 "main.c"
+                                            ,
+
+    };
+
+    createInfo.ppEnabledExtensionNames = extensions;
+    createInfo.enabledExtensionCount = sizeof(extensions) / sizeof(extensions[0]);
+
+    VkInstance instance = 0;
+    do { VkResult result_ = vkCreateInstance(&createInfo, 0, &instance); 
+# 50 "main.c" 3 4
+   ((
+# 50 "main.c"
+   result_ == VK_SUCCESS
+# 50 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 50 "main.c"
+   "result_ == VK_SUCCESS"
+# 50 "main.c" 3 4
+   , "main.c", 50, __extension__ __PRETTY_FUNCTION__))
+# 50 "main.c"
+   ; } while (0);
+
+    return instance;
 }
 
-VkPhysicalDevice pickPhysicalDevice(VkPhysicalDevice *physicalDevices,
-                                    uint32_t physicalDeviceCount) {
-  for (uint32_t i = 0; i < physicalDeviceCount; ++i) {
-    VkPhysicalDeviceProperties props;
-    vkGetPhysicalDeviceProperties(physicalDevices[i], &props);
+VkPhysicalDevice
+pick_physical_device(VkPhysicalDevice* physicalDevices, uint32_t physicalDeviceCount) {
+    for (uint32_t i = 0; i < physicalDeviceCount; ++i) {
+        VkPhysicalDeviceProperties props;
+        vkGetPhysicalDeviceProperties(physicalDevices[i], &props);
 
-    if (props.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU) {
-      printf("Pick discrete GPU: %s\n", props.deviceName);
-      return physicalDevices[i];
+        if (props.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU) {
+            printf("Pick discrete GPU: %s\n", props.deviceName);
+            return physicalDevices[i];
+        }
     }
-  }
 
-  if (physicalDeviceCount > 0) {
-    VkPhysicalDeviceProperties props;
-    vkGetPhysicalDeviceProperties(physicalDevices[0], &props);
+    if (physicalDeviceCount > 0) {
+        VkPhysicalDeviceProperties props;
+        vkGetPhysicalDeviceProperties(physicalDevices[0], &props);
 
-    printf("Pick fallback GPU: %s\n", props.deviceName);
-    return physicalDevices[0];
-  }
+        printf("Pick fallback GPU: %s\n", props.deviceName);
+        return physicalDevices[0];
+    }
 
-  printf("No physical devices available!");
-  return 0;
+    printf("No physical devices available!");
+    return 0;
 }
 
-VkDevice createDevice(VkInstance instance, VkPhysicalDevice physicalDevice,
-                      uint32_t *familyIndex) {
-  *familyIndex = 0;
+VkDevice
+create_device(VkInstance instance, VkPhysicalDevice physicalDevice, uint32_t* familyIndex) {
+    *familyIndex = 0;
 
-  float queuePriorities[] = {1.0f};
+    float queuePriorities[] = {1.0f};
 
-  VkDeviceQueueCreateInfo queueInfo = {
-      .sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO,
-      .queueFamilyIndex = *familyIndex,
-      .queueCount = 1,
-      .pQueuePriorities = queuePriorities,
-  };
+    VkDeviceQueueCreateInfo queueInfo = {
+        .sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO,
+        .queueFamilyIndex = *familyIndex,
+        .queueCount = 1,
+        .pQueuePriorities = queuePriorities,
+    };
 
-  const char *extensions[] = {
-# 90 "main.c" 3 4
-                             "VK_KHR_swapchain"
-# 90 "main.c"
-                                                            };
+    const char* extensions[] = {
+# 92 "main.c" 3 4
+                               "VK_KHR_swapchain"
+# 92 "main.c"
+                                                              };
 
-  VkDeviceCreateInfo createInfo = {
-      .sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO,
-      .queueCreateInfoCount = 1,
-      .pQueueCreateInfos = &queueInfo,
-      .ppEnabledExtensionNames = extensions,
-      .enabledExtensionCount = sizeof(extensions) / sizeof(extensions[0]),
-  };
+    VkDeviceCreateInfo createInfo = {
+        .sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO,
+        .queueCreateInfoCount = 1,
+        .pQueueCreateInfos = &queueInfo,
+        .ppEnabledExtensionNames = extensions,
+        .enabledExtensionCount = sizeof(extensions) / sizeof(extensions[0]),
+    };
 
-  VkDevice device = 0;
-  do { VkResult result_ = vkCreateDevice(physicalDevice, &createInfo, 0, &device); 
-# 101 "main.c" 3 4
- ((
-# 101 "main.c"
- result_ == VK_SUCCESS
-# 101 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 101 "main.c"
- "result_ == VK_SUCCESS"
-# 101 "main.c" 3 4
- , "main.c", 101, __extension__ __PRETTY_FUNCTION__))
-# 101 "main.c"
- ; } while (0);
+    VkDevice device = 0;
+    do { VkResult result_ = vkCreateDevice(physicalDevice, &createInfo, 0, &device); 
+# 103 "main.c" 3 4
+   ((
+# 103 "main.c"
+   result_ == VK_SUCCESS
+# 103 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 103 "main.c"
+   "result_ == VK_SUCCESS"
+# 103 "main.c" 3 4
+   , "main.c", 103, __extension__ __PRETTY_FUNCTION__))
+# 103 "main.c"
+   ; } while (0);
 
-  return device;
+    return device;
 }
 
-VkSurfaceKHR createSurface(VkInstance instance, GLFWwindow *window) {
-# 118 "main.c"
-  VkWaylandSurfaceCreateInfoKHR createInfo = {
-      .sType = VK_STRUCTURE_TYPE_WAYLAND_SURFACE_CREATE_INFO_KHR,
-      .display = glfwGetWaylandDisplay(),
-      .surface = glfwGetWaylandWindow(window),
-  };
+VkSurfaceKHR
+create_surface(VkInstance instance, GLFWwindow* window) {
+# 121 "main.c"
+    VkWaylandSurfaceCreateInfoKHR createInfo = {
+        .sType = VK_STRUCTURE_TYPE_WAYLAND_SURFACE_CREATE_INFO_KHR,
+        .display = glfwGetWaylandDisplay(),
+        .surface = glfwGetWaylandWindow(window),
+    };
 
-  VkSurfaceKHR surface = 0;
-  do { VkResult result_ = vkCreateWaylandSurfaceKHR(instance, &createInfo, 0, &surface); 
-# 125 "main.c" 3 4
- ((
-# 125 "main.c"
- result_ == VK_SUCCESS
-# 125 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 125 "main.c"
- "result_ == VK_SUCCESS"
-# 125 "main.c" 3 4
- , "main.c", 125, __extension__ __PRETTY_FUNCTION__))
-# 125 "main.c"
- ; } while (0);
-  return surface;
+    VkSurfaceKHR surface = 0;
+    do { VkResult result_ = vkCreateWaylandSurfaceKHR(instance, &createInfo, 0, &surface); 
+# 128 "main.c" 3 4
+   ((
+# 128 "main.c"
+   result_ == VK_SUCCESS
+# 128 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 128 "main.c"
+   "result_ == VK_SUCCESS"
+# 128 "main.c" 3 4
+   , "main.c", 128, __extension__ __PRETTY_FUNCTION__))
+# 128 "main.c"
+   ; } while (0);
+    return surface;
 
 
 
@@ -43896,449 +43892,440 @@ VkSurfaceKHR createSurface(VkInstance instance, GLFWwindow *window) {
 
 }
 
-VkSwapchainKHR createSwapchain(VkDevice device, VkSurfaceKHR surface,
-                               uint32_t familyIndex, uint32_t width,
-                               uint32_t height) {
-  VkSwapchainCreateInfoKHR createInfo = {
-      .sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR,
-      .surface = surface,
-      .minImageCount = 2,
-      .imageFormat = VK_FORMAT_R8G8B8A8_UNORM,
-      .imageColorSpace = VK_COLOR_SPACE_HDR10_ST2084_EXT,
-      .imageExtent = {.width = width, .height = height},
-      .imageArrayLayers = 1,
-      .imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT,
-      .queueFamilyIndexCount = 1,
-      .pQueueFamilyIndices = &familyIndex,
-      .presentMode = VK_PRESENT_MODE_FIFO_KHR,
-  };
+VkSwapchainKHR
+create_swapchain(VkDevice device, VkSurfaceKHR surface, uint32_t familyIndex, uint32_t width, uint32_t height) {
+    VkSwapchainCreateInfoKHR createInfo = {
+        .sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR,
+        .surface = surface,
+        .minImageCount = 2,
+        .imageFormat = VK_FORMAT_R8G8B8A8_UNORM,
+        .imageColorSpace = VK_COLOR_SPACE_HDR10_ST2084_EXT,
+        .imageExtent = {.width = width, .height = height},
+        .imageArrayLayers = 1,
+        .imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT,
+        .queueFamilyIndexCount = 1,
+        .pQueueFamilyIndices = &familyIndex,
+        .presentMode = VK_PRESENT_MODE_FIFO_KHR,
+    };
 
-  VkSwapchainKHR swapchain = 0;
-  do { VkResult result_ = vkCreateSwapchainKHR(device, &createInfo, 0, &swapchain); 
-# 153 "main.c" 3 4
- ((
-# 153 "main.c"
- result_ == VK_SUCCESS
-# 153 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 153 "main.c"
- "result_ == VK_SUCCESS"
-# 153 "main.c" 3 4
- , "main.c", 153, __extension__ __PRETTY_FUNCTION__))
-# 153 "main.c"
- ; } while (0);
+    VkSwapchainKHR swapchain = 0;
+    do { VkResult result_ = vkCreateSwapchainKHR(device, &createInfo, 0, &swapchain); 
+# 155 "main.c" 3 4
+   ((
+# 155 "main.c"
+   result_ == VK_SUCCESS
+# 155 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 155 "main.c"
+   "result_ == VK_SUCCESS"
+# 155 "main.c" 3 4
+   , "main.c", 155, __extension__ __PRETTY_FUNCTION__))
+# 155 "main.c"
+   ; } while (0);
 
-  return swapchain;
+    return swapchain;
 }
 
-VkSemaphore createSemaphore(VkDevice device) {
-  VkSemaphoreCreateInfo createInfo = {
-      .sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO,
-  };
+VkSemaphore
+create_semaphore(VkDevice device) {
+    VkSemaphoreCreateInfo createInfo = {
+        .sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO,
+    };
 
-  VkSemaphore semaphore = 0;
-  do { VkResult result_ = vkCreateSemaphore(device, &createInfo, 0, &semaphore); 
-# 164 "main.c" 3 4
- ((
-# 164 "main.c"
- result_ == VK_SUCCESS
-# 164 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 164 "main.c"
- "result_ == VK_SUCCESS"
-# 164 "main.c" 3 4
- , "main.c", 164, __extension__ __PRETTY_FUNCTION__))
-# 164 "main.c"
- ; } while (0);
+    VkSemaphore semaphore = 0;
+    do { VkResult result_ = vkCreateSemaphore(device, &createInfo, 0, &semaphore); 
+# 167 "main.c" 3 4
+   ((
+# 167 "main.c"
+   result_ == VK_SUCCESS
+# 167 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 167 "main.c"
+   "result_ == VK_SUCCESS"
+# 167 "main.c" 3 4
+   , "main.c", 167, __extension__ __PRETTY_FUNCTION__))
+# 167 "main.c"
+   ; } while (0);
 
-  return semaphore;
+    return semaphore;
 }
 
-VkCommandPool createCommandPool(VkDevice device, uint32_t familyIndex) {
-  VkCommandPoolCreateInfo createInfo = {
-      .sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO,
-      .flags = VK_COMMAND_POOL_CREATE_TRANSIENT_BIT,
-      .queueFamilyIndex = familyIndex,
-  };
+VkCommandPool
+create_command_pool(VkDevice device, uint32_t familyIndex) {
+    VkCommandPoolCreateInfo createInfo = {
+        .sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO,
+        .flags = VK_COMMAND_POOL_CREATE_TRANSIENT_BIT,
+        .queueFamilyIndex = familyIndex,
+    };
 
-  VkCommandPool commandPool = 0;
-  do { VkResult result_ = vkCreateCommandPool(device, &createInfo, 0, &commandPool); 
-# 177 "main.c" 3 4
- ((
-# 177 "main.c"
- result_ == VK_SUCCESS
-# 177 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 177 "main.c"
- "result_ == VK_SUCCESS"
-# 177 "main.c" 3 4
- , "main.c", 177, __extension__ __PRETTY_FUNCTION__))
-# 177 "main.c"
- ; } while (0);
+    VkCommandPool commandPool = 0;
+    do { VkResult result_ = vkCreateCommandPool(device, &createInfo, 0, &commandPool); 
+# 181 "main.c" 3 4
+   ((
+# 181 "main.c"
+   result_ == VK_SUCCESS
+# 181 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 181 "main.c"
+   "result_ == VK_SUCCESS"
+# 181 "main.c" 3 4
+   , "main.c", 181, __extension__ __PRETTY_FUNCTION__))
+# 181 "main.c"
+   ; } while (0);
 
-  return commandPool;
+    return commandPool;
 }
+int
+main() {
 
-int main() {
+    int ok = glfwInit();
+    
+# 189 "main.c" 3 4
+   ((
+# 189 "main.c"
+   ok
+# 189 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 189 "main.c"
+   "ok"
+# 189 "main.c" 3 4
+   , "main.c", 189, __extension__ __PRETTY_FUNCTION__))
+# 189 "main.c"
+             ;
 
-  int ok = glfwInit();
-  
-# 185 "main.c" 3 4
- ((
-# 185 "main.c"
- ok
-# 185 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 185 "main.c"
- "ok"
-# 185 "main.c" 3 4
- , "main.c", 185, __extension__ __PRETTY_FUNCTION__))
-# 185 "main.c"
-           ;
+    VkInstance instance = create_instance();
+    
+# 192 "main.c" 3 4
+   ((
+# 192 "main.c"
+   instance
+# 192 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 192 "main.c"
+   "instance"
+# 192 "main.c" 3 4
+   , "main.c", 192, __extension__ __PRETTY_FUNCTION__))
+# 192 "main.c"
+                   ;
 
-  VkInstance instance = createInstance();
-  
-# 188 "main.c" 3 4
- ((
-# 188 "main.c"
- instance
-# 188 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 188 "main.c"
- "instance"
-# 188 "main.c" 3 4
- , "main.c", 188, __extension__ __PRETTY_FUNCTION__))
-# 188 "main.c"
+    VkPhysicalDevice physicalDevices[8];
+    uint32_t physicalDeviceCount = sizeof(physicalDevices) / sizeof(physicalDevices[0]);
+    do { VkResult result_ = vkEnumeratePhysicalDevices(instance, &physicalDeviceCount, physicalDevices); 
+# 196 "main.c" 3 4
+   ((
+# 196 "main.c"
+   result_ == VK_SUCCESS
+# 196 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 196 "main.c"
+   "result_ == VK_SUCCESS"
+# 196 "main.c" 3 4
+   , "main.c", 196, __extension__ __PRETTY_FUNCTION__))
+# 196 "main.c"
+   ; } while (0);
+
+    VkPhysicalDevice physicalDevice = pick_physical_device(physicalDevices, physicalDeviceCount);
+    
+# 199 "main.c" 3 4
+   ((
+# 199 "main.c"
+   physicalDevice
+# 199 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 199 "main.c"
+   "physicalDevice"
+# 199 "main.c" 3 4
+   , "main.c", 199, __extension__ __PRETTY_FUNCTION__))
+# 199 "main.c"
+                         ;
+
+    uint32_t familyIndex = 0;
+    VkDevice device = create_device(instance, physicalDevice, &familyIndex);
+    
+# 203 "main.c" 3 4
+   ((
+# 203 "main.c"
+   device
+# 203 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 203 "main.c"
+   "device"
+# 203 "main.c" 3 4
+   , "main.c", 203, __extension__ __PRETTY_FUNCTION__))
+# 203 "main.c"
                  ;
 
-  VkPhysicalDevice physicalDevices[8];
-  uint32_t physicalDeviceCount =
-      sizeof(physicalDevices) / sizeof(physicalDevices[0]);
-  do { VkResult result_ = vkEnumeratePhysicalDevices(instance, &physicalDeviceCount, physicalDevices); 
-# 193 "main.c" 3 4
- ((
-# 193 "main.c"
- result_ == VK_SUCCESS
-# 193 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 193 "main.c"
- "result_ == VK_SUCCESS"
-# 193 "main.c" 3 4
- , "main.c", 193, __extension__ __PRETTY_FUNCTION__))
-# 193 "main.c"
- ; } while (0)
-                                                       ;
-
-  VkPhysicalDevice physicalDevice =
-      pickPhysicalDevice(physicalDevices, physicalDeviceCount);
-  
-# 198 "main.c" 3 4
- ((
-# 198 "main.c"
- physicalDevice
-# 198 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 198 "main.c"
- "physicalDevice"
-# 198 "main.c" 3 4
- , "main.c", 198, __extension__ __PRETTY_FUNCTION__))
-# 198 "main.c"
-                       ;
-
-  uint32_t familyIndex = 0;
-  VkDevice device = createDevice(instance, physicalDevice, &familyIndex);
-  
-# 202 "main.c" 3 4
- ((
-# 202 "main.c"
- device
-# 202 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 202 "main.c"
- "device"
-# 202 "main.c" 3 4
- , "main.c", 202, __extension__ __PRETTY_FUNCTION__))
-# 202 "main.c"
-               ;
-
-  GLFWwindow *window =
-      glfwCreateWindow(1024, 768, "window without windows", 0, 0);
-  
+    GLFWwindow* window = glfwCreateWindow(1024, 768, "window without windows", 0, 0);
+    
 # 206 "main.c" 3 4
- ((
+   ((
 # 206 "main.c"
- window
+   window
 # 206 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
+   ) ? (void) (0) : __assert_fail (
 # 206 "main.c"
- "window"
+   "window"
 # 206 "main.c" 3 4
- , "main.c", 206, __extension__ __PRETTY_FUNCTION__))
+   , "main.c", 206, __extension__ __PRETTY_FUNCTION__))
 # 206 "main.c"
-               ;
+                 ;
 
-  VkSurfaceKHR surface = createSurface(instance, window);
-  
+    VkSurfaceKHR surface = create_surface(instance, window);
+    
 # 209 "main.c" 3 4
- ((
+   ((
 # 209 "main.c"
- surface
+   surface
 # 209 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
+   ) ? (void) (0) : __assert_fail (
 # 209 "main.c"
- "surface"
+   "surface"
 # 209 "main.c" 3 4
- , "main.c", 209, __extension__ __PRETTY_FUNCTION__))
+   , "main.c", 209, __extension__ __PRETTY_FUNCTION__))
 # 209 "main.c"
-                ;
-
-  int windowWidth = 0, windowHeight = 0;
-  glfwGetWindowSize(window, &windowWidth, &windowHeight);
-
-  VkSwapchainKHR swapchain =
-      createSwapchain(device, surface, familyIndex, windowWidth, windowHeight);
-  
-# 216 "main.c" 3 4
- ((
-# 216 "main.c"
- swapchain
-# 216 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 216 "main.c"
- "swapchain"
-# 216 "main.c" 3 4
- , "main.c", 216, __extension__ __PRETTY_FUNCTION__))
-# 216 "main.c"
                   ;
 
-  VkSemaphore acquireSemaphore = createSemaphore(device);
-  
-# 219 "main.c" 3 4
- ((
-# 219 "main.c"
- acquireSemaphore
-# 219 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 219 "main.c"
- "acquireSemaphore"
-# 219 "main.c" 3 4
- , "main.c", 219, __extension__ __PRETTY_FUNCTION__))
-# 219 "main.c"
-                         ;
+    int windowWidth = 0, windowHeight = 0;
+    glfwGetWindowSize(window, &windowWidth, &windowHeight);
 
-  VkSemaphore releaseSemaphore = createSemaphore(device);
-  
-# 222 "main.c" 3 4
- ((
-# 222 "main.c"
- releaseSemaphore
-# 222 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 222 "main.c"
- "releaseSemaphore"
-# 222 "main.c" 3 4
- , "main.c", 222, __extension__ __PRETTY_FUNCTION__))
-# 222 "main.c"
-                         ;
-
-  VkQueue queue = 0;
-  vkGetDeviceQueue(device, familyIndex, 0, &queue);
-
-  VkImage swapchainImages[3];
-  uint32_t swapchainImageCount =
-      sizeof(swapchainImages) / sizeof(swapchainImages[0]);
-  do { VkResult result_ = vkGetSwapchainImagesKHR(device, swapchain, &swapchainImageCount, swapchainImages); 
-# 230 "main.c" 3 4
- ((
-# 230 "main.c"
- result_ == VK_SUCCESS
-# 230 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 230 "main.c"
- "result_ == VK_SUCCESS"
-# 230 "main.c" 3 4
- , "main.c", 230, __extension__ __PRETTY_FUNCTION__))
-# 230 "main.c"
- ; } while (0)
-                                                    ;
-
-  VkCommandPool commandPool = createCommandPool(device, familyIndex);
-  
-# 234 "main.c" 3 4
- ((
-# 234 "main.c"
- commandPool
-# 234 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 234 "main.c"
- "commandPool"
-# 234 "main.c" 3 4
- , "main.c", 234, __extension__ __PRETTY_FUNCTION__))
-# 234 "main.c"
+    VkSwapchainKHR swapchain = create_swapchain(device, surface, familyIndex, windowWidth, windowHeight);
+    
+# 215 "main.c" 3 4
+   ((
+# 215 "main.c"
+   swapchain
+# 215 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 215 "main.c"
+   "swapchain"
+# 215 "main.c" 3 4
+   , "main.c", 215, __extension__ __PRETTY_FUNCTION__))
+# 215 "main.c"
                     ;
 
-  VkCommandBufferAllocateInfo allocateInfo = {
-      .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO,
-      .commandPool = commandPool,
-      .level = VK_COMMAND_BUFFER_LEVEL_PRIMARY,
-      .commandBufferCount = 1,
-  };
-
-  VkCommandBuffer commandBuffer = 0;
-  do { VkResult result_ = vkAllocateCommandBuffers(device, &allocateInfo, &commandBuffer); 
-# 244 "main.c" 3 4
- ((
-# 244 "main.c"
- result_ == VK_SUCCESS
-# 244 "main.c" 3 4
- ) ? (void) (0) : __assert_fail (
-# 244 "main.c"
- "result_ == VK_SUCCESS"
-# 244 "main.c" 3 4
- , "main.c", 244, __extension__ __PRETTY_FUNCTION__))
-# 244 "main.c"
- ; } while (0);
-
-  while (!glfwWindowShouldClose(window)) {
-    glfwPollEvents();
-
-    uint32_t imageIndex = 0;
-    do { VkResult result_ = vkAcquireNextImageKHR(device, swapchain, ~0ull, acquireSemaphore, 
-# 250 "main.c" 3 4
-   ((void*)0)
-# 250 "main.c"
-   , &imageIndex); 
-# 250 "main.c" 3 4
+    VkSemaphore acquireSemaphore = create_semaphore(device);
+    
+# 218 "main.c" 3 4
    ((
-# 250 "main.c"
-   result_ == VK_SUCCESS
-# 250 "main.c" 3 4
+# 218 "main.c"
+   acquireSemaphore
+# 218 "main.c" 3 4
    ) ? (void) (0) : __assert_fail (
-# 250 "main.c"
-   "result_ == VK_SUCCESS"
-# 250 "main.c" 3 4
-   , "main.c", 250, __extension__ __PRETTY_FUNCTION__))
-# 250 "main.c"
-   ; } while (0)
-                                                                ;
+# 218 "main.c"
+   "acquireSemaphore"
+# 218 "main.c" 3 4
+   , "main.c", 218, __extension__ __PRETTY_FUNCTION__))
+# 218 "main.c"
+                           ;
 
-    do { VkResult result_ = vkResetCommandPool(device, commandPool, 0); 
-# 253 "main.c" 3 4
+    VkSemaphore releaseSemaphore = create_semaphore(device);
+    
+# 221 "main.c" 3 4
    ((
-# 253 "main.c"
-   result_ == VK_SUCCESS
-# 253 "main.c" 3 4
+# 221 "main.c"
+   releaseSemaphore
+# 221 "main.c" 3 4
    ) ? (void) (0) : __assert_fail (
-# 253 "main.c"
+# 221 "main.c"
+   "releaseSemaphore"
+# 221 "main.c" 3 4
+   , "main.c", 221, __extension__ __PRETTY_FUNCTION__))
+# 221 "main.c"
+                           ;
+
+    VkQueue queue = 0;
+    vkGetDeviceQueue(device, familyIndex, 0, &queue);
+
+    VkImage swapchainImages[3];
+    uint32_t swapchainImageCount = sizeof(swapchainImages) / sizeof(swapchainImages[0]);
+    do { VkResult result_ = vkGetSwapchainImagesKHR(device, swapchain, &swapchainImageCount, swapchainImages); 
+# 228 "main.c" 3 4
+   ((
+# 228 "main.c"
+   result_ == VK_SUCCESS
+# 228 "main.c" 3 4
+   ) ? (void) (0) : __assert_fail (
+# 228 "main.c"
    "result_ == VK_SUCCESS"
-# 253 "main.c" 3 4
-   , "main.c", 253, __extension__ __PRETTY_FUNCTION__))
-# 253 "main.c"
+# 228 "main.c" 3 4
+   , "main.c", 228, __extension__ __PRETTY_FUNCTION__))
+# 228 "main.c"
    ; } while (0);
 
-    VkCommandBufferBeginInfo beginInfo = {
-        .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
-        .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT,
-    };
-
-    do { VkResult result_ = vkBeginCommandBuffer(commandBuffer, &beginInfo); 
-# 260 "main.c" 3 4
+    VkCommandPool commandPool = create_command_pool(device, familyIndex);
+    
+# 231 "main.c" 3 4
    ((
-# 260 "main.c"
-   result_ == VK_SUCCESS
-# 260 "main.c" 3 4
+# 231 "main.c"
+   commandPool
+# 231 "main.c" 3 4
    ) ? (void) (0) : __assert_fail (
-# 260 "main.c"
-   "result_ == VK_SUCCESS"
-# 260 "main.c" 3 4
-   , "main.c", 260, __extension__ __PRETTY_FUNCTION__))
-# 260 "main.c"
-   ; } while (0);
+# 231 "main.c"
+   "commandPool"
+# 231 "main.c" 3 4
+   , "main.c", 231, __extension__ __PRETTY_FUNCTION__))
+# 231 "main.c"
+                      ;
 
-    VkClearColorValue color = {1, 0, 38, 1};
-
-    VkImageSubresourceRange range = {
-        .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
-        .levelCount = 1,
-        .layerCount = 1,
-    };
-
-    vkCmdClearColorImage(commandBuffer, swapchainImages[imageIndex],
-                         VK_IMAGE_LAYOUT_GENERAL, &color, 1, &range);
-
-    do { VkResult result_ = vkEndCommandBuffer(commandBuffer); 
-# 273 "main.c" 3 4
-   ((
-# 273 "main.c"
-   result_ == VK_SUCCESS
-# 273 "main.c" 3 4
-   ) ? (void) (0) : __assert_fail (
-# 273 "main.c"
-   "result_ == VK_SUCCESS"
-# 273 "main.c" 3 4
-   , "main.c", 273, __extension__ __PRETTY_FUNCTION__))
-# 273 "main.c"
-   ; } while (0);
-
-    VkPipelineStageFlags submitStageMask =
-        VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
-
-    VkSubmitInfo submitInfo = {
-        .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
-        .waitSemaphoreCount = 1,
-        .pWaitSemaphores = &acquireSemaphore,
-        .pWaitDstStageMask = &submitStageMask,
+    VkCommandBufferAllocateInfo allocateInfo = {
+        .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO,
+        .commandPool = commandPool,
+        .level = VK_COMMAND_BUFFER_LEVEL_PRIMARY,
         .commandBufferCount = 1,
-        .pCommandBuffers = &commandBuffer,
-        .signalSemaphoreCount = 1,
-        .pSignalSemaphores = &releaseSemaphore,
     };
 
-    vkQueueSubmit(queue, 1, &submitInfo, 
-# 289 "main.c" 3 4
-                                        ((void*)0)
-# 289 "main.c"
-                                                      );
-
-    VkPresentInfoKHR presentInfo = {
-        .sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR,
-        .waitSemaphoreCount = 1,
-        .pWaitSemaphores = &releaseSemaphore,
-        .swapchainCount = 1,
-        .pSwapchains = &swapchain,
-        .pImageIndices = &imageIndex,
-    };
-
-    do { VkResult result_ = vkQueuePresentKHR(queue, &presentInfo); 
-# 300 "main.c" 3 4
+    VkCommandBuffer commandBuffer = 0;
+    do { VkResult result_ = vkAllocateCommandBuffers(device, &allocateInfo, &commandBuffer); 
+# 241 "main.c" 3 4
    ((
-# 300 "main.c"
+# 241 "main.c"
    result_ == VK_SUCCESS
-# 300 "main.c" 3 4
+# 241 "main.c" 3 4
    ) ? (void) (0) : __assert_fail (
-# 300 "main.c"
+# 241 "main.c"
    "result_ == VK_SUCCESS"
-# 300 "main.c" 3 4
-   , "main.c", 300, __extension__ __PRETTY_FUNCTION__))
-# 300 "main.c"
+# 241 "main.c" 3 4
+   , "main.c", 241, __extension__ __PRETTY_FUNCTION__))
+# 241 "main.c"
    ; } while (0);
 
-    do { VkResult result_ = vkDeviceWaitIdle(device); 
-# 302 "main.c" 3 4
-   ((
-# 302 "main.c"
-   result_ == VK_SUCCESS
-# 302 "main.c" 3 4
-   ) ? (void) (0) : __assert_fail (
-# 302 "main.c"
-   "result_ == VK_SUCCESS"
-# 302 "main.c" 3 4
-   , "main.c", 302, __extension__ __PRETTY_FUNCTION__))
-# 302 "main.c"
-   ; } while (0);
-  }
+    while (!glfwWindowShouldClose(window)) {
+        glfwPollEvents();
 
-  glfwDestroyWindow(window);
+        uint32_t imageIndex = 0;
+        do { VkResult result_ = vkAcquireNextImageKHR(device, swapchain, ~0ull, acquireSemaphore, 
+# 247 "main.c" 3 4
+       ((void*)0)
+# 247 "main.c"
+       , &imageIndex); 
+# 247 "main.c" 3 4
+       ((
+# 247 "main.c"
+       result_ == VK_SUCCESS
+# 247 "main.c" 3 4
+       ) ? (void) (0) : __assert_fail (
+# 247 "main.c"
+       "result_ == VK_SUCCESS"
+# 247 "main.c" 3 4
+       , "main.c", 247, __extension__ __PRETTY_FUNCTION__))
+# 247 "main.c"
+       ; } while (0);
 
-  vkDestroyInstance(instance, 0);
+        do { VkResult result_ = vkResetCommandPool(device, commandPool, 0); 
+# 249 "main.c" 3 4
+       ((
+# 249 "main.c"
+       result_ == VK_SUCCESS
+# 249 "main.c" 3 4
+       ) ? (void) (0) : __assert_fail (
+# 249 "main.c"
+       "result_ == VK_SUCCESS"
+# 249 "main.c" 3 4
+       , "main.c", 249, __extension__ __PRETTY_FUNCTION__))
+# 249 "main.c"
+       ; } while (0);
+
+        VkCommandBufferBeginInfo beginInfo = {
+            .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
+            .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT,
+        };
+
+        do { VkResult result_ = vkBeginCommandBuffer(commandBuffer, &beginInfo); 
+# 256 "main.c" 3 4
+       ((
+# 256 "main.c"
+       result_ == VK_SUCCESS
+# 256 "main.c" 3 4
+       ) ? (void) (0) : __assert_fail (
+# 256 "main.c"
+       "result_ == VK_SUCCESS"
+# 256 "main.c" 3 4
+       , "main.c", 256, __extension__ __PRETTY_FUNCTION__))
+# 256 "main.c"
+       ; } while (0);
+
+        VkClearColorValue color = {1, 0, 38, 1};
+
+        VkImageSubresourceRange range = {
+            .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
+            .levelCount = 1,
+            .layerCount = 1,
+        };
+
+        vkCmdClearColorImage(commandBuffer, swapchainImages[imageIndex], VK_IMAGE_LAYOUT_GENERAL, &color, 1, &range);
+
+        do { VkResult result_ = vkEndCommandBuffer(commandBuffer); 
+# 268 "main.c" 3 4
+       ((
+# 268 "main.c"
+       result_ == VK_SUCCESS
+# 268 "main.c" 3 4
+       ) ? (void) (0) : __assert_fail (
+# 268 "main.c"
+       "result_ == VK_SUCCESS"
+# 268 "main.c" 3 4
+       , "main.c", 268, __extension__ __PRETTY_FUNCTION__))
+# 268 "main.c"
+       ; } while (0);
+
+        VkPipelineStageFlags submitStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+
+        VkSubmitInfo submitInfo = {
+            .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
+            .waitSemaphoreCount = 1,
+            .pWaitSemaphores = &acquireSemaphore,
+            .pWaitDstStageMask = &submitStageMask,
+            .commandBufferCount = 1,
+            .pCommandBuffers = &commandBuffer,
+            .signalSemaphoreCount = 1,
+            .pSignalSemaphores = &releaseSemaphore,
+        };
+
+        vkQueueSubmit(queue, 1, &submitInfo, 
+# 283 "main.c" 3 4
+                                            ((void*)0)
+# 283 "main.c"
+                                                          );
+
+        VkPresentInfoKHR presentInfo = {
+            .sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR,
+            .waitSemaphoreCount = 1,
+            .pWaitSemaphores = &releaseSemaphore,
+            .swapchainCount = 1,
+            .pSwapchains = &swapchain,
+            .pImageIndices = &imageIndex,
+        };
+
+        do { VkResult result_ = vkQueuePresentKHR(queue, &presentInfo); 
+# 294 "main.c" 3 4
+       ((
+# 294 "main.c"
+       result_ == VK_SUCCESS
+# 294 "main.c" 3 4
+       ) ? (void) (0) : __assert_fail (
+# 294 "main.c"
+       "result_ == VK_SUCCESS"
+# 294 "main.c" 3 4
+       , "main.c", 294, __extension__ __PRETTY_FUNCTION__))
+# 294 "main.c"
+       ; } while (0);
+
+        do { VkResult result_ = vkDeviceWaitIdle(device); 
+# 296 "main.c" 3 4
+       ((
+# 296 "main.c"
+       result_ == VK_SUCCESS
+# 296 "main.c" 3 4
+       ) ? (void) (0) : __assert_fail (
+# 296 "main.c"
+       "result_ == VK_SUCCESS"
+# 296 "main.c" 3 4
+       , "main.c", 296, __extension__ __PRETTY_FUNCTION__))
+# 296 "main.c"
+       ; } while (0);
+    }
+
+    glfwDestroyWindow(window);
+
+    vkDestroyInstance(instance, 0);
 }

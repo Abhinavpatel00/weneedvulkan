@@ -7,7 +7,7 @@
 # strict aliasing not always very good but in general it can enable some optimization it might break code https://stackoverflow.com/questions/1225741/performance-impact-of-fno-strict-aliasing
 
 CC = gcc
-CFLAGS = -ggdb3 -O3 -DVK_USE_PLATFORM_WAYLAND_KHR -std=c99 -Wall -Wextra -pedantic -save-temps -Wshadow -Wfloat-equal -Wpointer-arith -Wstrict-prototypes -Wformat=2 -Wcast-align -fsanitize=undefined   -ftree-vectorize -ftree-loop-vectorize -fopt-info-vec-missed -fopt-info-vec-optimized -fstrict-aliasing
+CFLAGS = -ggdb3 -O3 -DVK_USE_PLATFORM_WAYLAND_KHR  -D_DEBUG -std=c99 -Wall -Wextra -pedantic -save-temps -Wshadow -Wfloat-equal -Wpointer-arith -Wstrict-prototypes -Wformat=2 -Wcast-align -fsanitize=undefined   -ftree-vectorize -ftree-loop-vectorize -fopt-info-vec-missed -fopt-info-vec-optimized -fstrict-aliasing
 
 LIBS = -lglfw -lvulkan
 
