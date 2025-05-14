@@ -207,7 +207,7 @@ VkQueue queue;
     // Wait for the image to be presented
     VK_CHECK(vkDeviceWaitIdle(device));
     // Destroy the semaphore
-    vkDestroySemaphore(device, acquireSemaphore, NULL);
+    vkDestroySemaphore(device, Semaphore, NULL);
 
 
     }
