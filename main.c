@@ -213,8 +213,8 @@ VkQueue queue;
     }
 
     // Cleanup
-    vkDestroySemaphore(device, acquireSemaphore, 0);
-    vkDestroySemaphore(device, releaseSemaphore, 0);
+    vkDestroySemaphore(device, Semaphore, 0);
+
     vkDestroySurfaceKHR(instance, surface, 0);
     vkDestroyDevice(device, 0);
     vkDestroyInstance(instance, 0);
