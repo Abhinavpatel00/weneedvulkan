@@ -1,302 +1,224 @@
 #include <assert.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <vulkan/vulkan.h>
 #include <vulkan/vulkan_core.h>
-#include "vulkan/vulkan.h"
+#include <stdbool.h>
+
+#define GGLFW_INCLUDE_VULKAN
 #define GLFW_EXPOSE_NATIVE_WAYLAND
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
-#include <vulkan/vulkan.h>
+#include <vulkan/vulkan_wayland.h>
 
-#define VK_CHECK(call)                                                                                                 \
-    do {                                                                                                               \
-        VkResult result_ = call;                                                                                       \
-        assert(result_ == VK_SUCCESS);                                                                                 \
-    } while (0)
+#define VK_CHECK(call) do { \
+    VkResult result_ = call; \
+    assert(result_ == VK_SUCCESS); \
+} while(0)
 
-VkInstance
-create_instance() {
+#ifndef ARRAYSIZE
+#define ARRAYSIZE(array) (sizeof(array)/sizeof((array)[0]))
+#endif
 
-    VkApplicationInfo appInfo = {
-        .sType = VK_STRUCTURE_TYPE_APPLICATION_INFO,
-        .apiVersion =  VK_API_VERSION_1_4,
-    };
+int main() {
+    // Initialize GLFW
+    int rc = glfwInit();
+    assert(rc);
 
-    VkInstanceCreateInfo createInfo = {
-        .sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO,
-        .pApplicationInfo = &appInfo,
-    };
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API         );
+	GLFWwindow* window = glfwCreateWindow(800, 600, "niagara", 0, 0);
+	assert(window);
+    
+	int windowWidth = 0, windowHeight = 0;
+	glfwGetWindowSize(window, &windowWidth, &windowHeight);
+
+
+    // Create Vulkan instance
+    VkApplicationInfo appInfo = {VK_STRUCTURE_TYPE_APPLICATION_INFO};
+    appInfo.apiVersion = VK_API_VERSION_1_3;
+
+    VkInstanceCreateInfo createInfo = {VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO};
+    createInfo.pApplicationInfo = &appInfo;
 
 #ifdef _DEBUG
     const char* debugLayers[] = {"VK_LAYER_KHRONOS_validation"};
-
     createInfo.ppEnabledLayerNames = debugLayers;
-    createInfo.enabledLayerCount = sizeof(debugLayers) / sizeof(debugLayers[0]);
+    createInfo.enabledLayerCount = ARRAYSIZE(debugLayers);
 #endif
 
     const char* extensions[] = {
         VK_KHR_SURFACE_EXTENSION_NAME,
-#ifdef VK_USE_PLATFORM_WIN32_KHR
-        VK_KHR_WIN32_SURFACE_EXTENSION_NAME,
-#endif
 #ifdef VK_USE_PLATFORM_WAYLAND_KHR
         VK_KHR_WAYLAND_SURFACE_EXTENSION_NAME,
+#endif
+#ifndef NDEBUG
+        VK_EXT_DEBUG_REPORT_EXTENSION_NAME,
 #endif
     };
 
     createInfo.ppEnabledExtensionNames = extensions;
-    createInfo.enabledExtensionCount = sizeof(extensions) / sizeof(extensions[0]);
+    createInfo.enabledExtensionCount = ARRAYSIZE(extensions);
 
-    VkInstance instance = 0;
+    VkInstance instance;
     VK_CHECK(vkCreateInstance(&createInfo, 0, &instance));
 
-    return instance;
-}
+    // Enumerate physical devices
+    VkPhysicalDevice physicalDevices[8];
+    uint32_t physicalDeviceCount = ARRAYSIZE(physicalDevices);
+    VK_CHECK(vkEnumeratePhysicalDevices(instance, &physicalDeviceCount, physicalDevices));
 
-VkPhysicalDevice
-pick_physical_device(VkPhysicalDevice* physicalDevices, uint32_t physicalDeviceCount) {
+    // Select physical device
+    VkPhysicalDevice selectedPhysicalDevice = 0;
+    VkPhysicalDevice discrete = 0;
+    VkPhysicalDevice fallback = 0;
+
     for (uint32_t i = 0; i < physicalDeviceCount; ++i) {
         VkPhysicalDeviceProperties props;
         vkGetPhysicalDeviceProperties(physicalDevices[i], &props);
+        printf("GPU%d: %s\n", i, props.deviceName);
 
-        if (props.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU) {
-            printf("Pick discrete GPU: %s\n", props.deviceName);
-            return physicalDevices[i];
+        if (!discrete && props.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU) {
+            discrete = physicalDevices[i];
+        }
+        if (!fallback) {
+            fallback = physicalDevices[i];
         }
     }
 
-    if (physicalDeviceCount > 0) {
+    selectedPhysicalDevice = discrete ? discrete : fallback;
+    if (selectedPhysicalDevice) {
         VkPhysicalDeviceProperties props;
-        vkGetPhysicalDeviceProperties(physicalDevices[0], &props);
-
-        printf("Pick fallback GPU: %s\n", props.deviceName);
-        return physicalDevices[0];
+        vkGetPhysicalDeviceProperties(selectedPhysicalDevice, &props);
+        printf("Selected GPU: %s\n", props.deviceName);
+    } else {
+        printf("No suitable GPU found\n");
+        exit(1);
     }
 
-    printf("No physical devices available!");
-    return 0;
-}
+    // Get queue family properties
+    uint32_t queueFamilyCount = 0;
+    vkGetPhysicalDeviceQueueFamilyProperties(selectedPhysicalDevice, &queueFamilyCount, 0);
+    VkQueueFamilyProperties* queueFamilies = malloc(queueFamilyCount * sizeof(VkQueueFamilyProperties));
+    vkGetPhysicalDeviceQueueFamilyProperties(selectedPhysicalDevice, &queueFamilyCount, queueFamilies);
+  uint32_t queuefamilyIndex =0;
+    // Device queue creation
+    float queuePriority = 1.0f;
+    VkDeviceQueueCreateInfo queueCreateInfo = {VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO};
+    queueCreateInfo.queueFamilyIndex = queuefamilyIndex;
+    queueCreateInfo.queueCount = 1;
+    queueCreateInfo.pQueuePriorities = &queuePriority;
 
-VkDevice
-create_device(VkInstance instance, VkPhysicalDevice physicalDevice, uint32_t* familyIndex) {
-    *familyIndex = 0;
+    // Physical device features
+    VkPhysicalDeviceFeatures deviceFeatures = {0};
 
-    float queuePriorities[] = {1.0f};
+    // Device creation
+    const char* deviceExtensions[] = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+    VkDeviceCreateInfo deviceCreateInfo = {VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO};
+    deviceCreateInfo.queueCreateInfoCount = 1;
+    deviceCreateInfo.pQueueCreateInfos = &queueCreateInfo;
+    deviceCreateInfo.enabledExtensionCount = ARRAYSIZE(deviceExtensions);
+    deviceCreateInfo.ppEnabledExtensionNames = deviceExtensions;
+    deviceCreateInfo.pEnabledFeatures = &deviceFeatures;
 
-    VkDeviceQueueCreateInfo queueInfo = {
-        .sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO,
-        .queueFamilyIndex = *familyIndex,
-        .queueCount = 1,
-        .pQueuePriorities = queuePriorities,
-    };
+    VkDevice device;
+    VK_CHECK(vkCreateDevice(selectedPhysicalDevice, &deviceCreateInfo, 0, &device));
 
-    const char* extensions[] = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
-
-    VkDeviceCreateInfo createInfo = {
-        .sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO,
-        .queueCreateInfoCount = 1,
-        .pQueueCreateInfos = &queueInfo,
-        .ppEnabledExtensionNames = extensions,
-        .enabledExtensionCount = sizeof(extensions) / sizeof(extensions[0]),
-    };
-
-    VkDevice device = 0;
-    VK_CHECK(vkCreateDevice(physicalDevice, &createInfo, 0, &device));
-
-    return device;
-}
-
-VkSurfaceKHR
-create_surface(VkInstance instance, GLFWwindow* window) {
-#if defined(VK_USE_PLATFORM_WIN32_KHR)
-    VkWin32SurfaceCreateInfoKHR createInfo = {
-        .sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR,
-        .hinstance = GetModuleHandle(0),
-        .hwnd = glfwGetWin32Window(window),
-    };
+// need different for other os
+    VkWaylandSurfaceCreateInfoKHR surfacecreateInfo = { VK_STRUCTURE_TYPE_WAYLAND_SURFACE_CREATE_INFO_KHR };
+    surfacecreateInfo.display = glfwGetWaylandDisplay();
+    surfacecreateInfo.surface = glfwGetWaylandWindow(window);
 
     VkSurfaceKHR surface = 0;
-    VK_CHECK(vkCreateWin32SurfaceKHR(instance, &createInfo, 0, &surface));
-    return surface;
-#elif defined(VK_USE_PLATFORM_WAYLAND_KHR)
-    VkWaylandSurfaceCreateInfoKHR createInfo = {
-        .sType = VK_STRUCTURE_TYPE_WAYLAND_SURFACE_CREATE_INFO_KHR,
-        .display = glfwGetWaylandDisplay(),
-        .surface = glfwGetWaylandWindow(window),
-    };
+    VK_CHECK(vkCreateWaylandSurfaceKHR(instance, &surfacecreateInfo, 0, &surface));
+VkSemaphoreCreateInfo semInfo = {VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO};
+    
 
-    VkSurfaceKHR surface = 0;
-    VK_CHECK(vkCreateWaylandSurfaceKHR(instance, &createInfo, 0, &surface));
-    return surface;
 
-#else
-    VkSurfaceKHR surface = 0;
-    VK_CHECK(glfwCreateWindowSurface(instance, window, 0, &surface));
-    return surface;
-#endif
-}
+    VkBool32 presentSupported = 0;
+    VK_CHECK(vkGetPhysicalDeviceSurfaceSupportKHR(selectedPhysicalDevice, queuefamilyIndex, surface, &presentSupported));
+	assert(presentSupported);
 
-VkSwapchainKHR
-create_swapchain(VkDevice device, VkSurfaceKHR surface, uint32_t familyIndex, uint32_t width, uint32_t height) {
-    VkSwapchainCreateInfoKHR createInfo = {
-        .sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR,
-        .surface = surface,
-        .minImageCount = 2,
-        .imageFormat = VK_FORMAT_R8G8B8A8_UNORM,
-        .imageColorSpace = VK_COLOR_SPACE_HDR10_ST2084_EXT,
-        .imageExtent = {.width = width, .height = height},
-        .imageArrayLayers = 1,
-        .imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT,
-        .queueFamilyIndexCount = 1,
-        .pQueueFamilyIndices = &familyIndex,
-        .presentMode = VK_PRESENT_MODE_FIFO_KHR,
-    };
+    VkSurfaceCapabilitiesKHR surfaceCapabilities;
+    VK_CHECK(vkGetPhysicalDeviceSurfaceCapabilitiesKHR(selectedPhysicalDevice, surface, &surfaceCapabilities));
+    uint32_t formatCount = 0;
+vkGetPhysicalDeviceSurfaceFormatsKHR(selectedPhysicalDevice, surface, &formatCount, NULL);
+VkSurfaceFormatKHR* formats = malloc(formatCount * sizeof(VkSurfaceFormatKHR));
+vkGetPhysicalDeviceSurfaceFormatsKHR(selectedPhysicalDevice, surface, &formatCount, formats);
 
-    VkSwapchainKHR swapchain = 0;
-    VK_CHECK(vkCreateSwapchainKHR(device, &createInfo, 0, &swapchain));
 
-    return swapchain;
-}
+    VkSwapchainKHR swapchain;
+    VkSwapchainCreateInfoKHR swapchaincreateinfo = {};
+    swapchaincreateinfo.sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
 
-VkSemaphore
-create_semaphore(VkDevice device) {
-    VkSemaphoreCreateInfo createInfo = {
-        .sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO,
-    };
+    swapchaincreateinfo.surface = surface;
+ //    If presentMode is not VK_PRESENT_MODE_SHARED_DEMAND_REFRESH_KHR nor VK_PRESENT_MODE_SHARED_CONTINUOUS_REFRESH_KHR, then minImageCount must be greater than or equal to the
+ // value returned in the minImageCount member of the VkSurfaceCapabilitiesKHR structure returned by vkGetPhysicalDeviceSurfaceCapabilitiesKHR 
+  
+ swapchaincreateinfo.minImageCount = surfaceCapabilities.minImageCount;
+    // need to check dynamically for support 
+    // swapchaincreateinfo.imageFormat = VK_FORMAT_R8G8B8A8_UNORM;
+    // swapchaincreateinfo.imageColorSpace = VK_COLOR_SPACE_SRGB_NONLINEAR_KHR;
+    swapchaincreateinfo.imageFormat = formats[0].format;
+    swapchaincreateinfo.imageColorSpace = formats[0].colorSpace;
+    free(formats);
+    swapchaincreateinfo.imageExtent.width = windowWidth;
+    swapchaincreateinfo.imageExtent.height = windowHeight;
+    swapchaincreateinfo.imageArrayLayers = 1;
+    swapchaincreateinfo.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
+    // exclusive is better concurrent for cross process sharing
+    swapchaincreateinfo.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
+    // no transform 
+    swapchaincreateinfo.preTransform = VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR;
+    swapchaincreateinfo.compositeAlpha = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
+    // dynamic determine
+    swapchaincreateinfo.presentMode = VK_PRESENT_MODE_FIFO_KHR;
+    swapchaincreateinfo.clipped = VK_TRUE;
+    swapchaincreateinfo.queueFamilyIndexCount = 1;
+    swapchaincreateinfo.pQueueFamilyIndices = &queuefamilyIndex;
+    VK_CHECK(vkCreateSwapchainKHR(device, &swapchaincreateinfo, 0, &swapchain));
+  uint32_t imageCount = 0;
+    VK_CHECK(vkGetSwapchainImagesKHR(device, swapchain, &imageCount, NULL));
+    VkImage* swapchainImages = malloc(imageCount * sizeof(VkImage));
+    VK_CHECK(vkGetSwapchainImagesKHR(device, swapchain, &imageCount, swapchainImages));
 
-    VkSemaphore semaphore = 0;
-    VK_CHECK(vkCreateSemaphore(device, &createInfo, 0, &semaphore));
+    VkSemaphore Semaphore;
+    VK_CHECK(vkCreateSemaphore(device, &semInfo, 0, &Semaphore));
 
-    return semaphore;
-}
+    
+VkQueue queue;
+    vkGetDeviceQueue(device, queuefamilyIndex, 0, &queue);
 
-VkCommandPool
-create_command_pool(VkDevice device, uint32_t familyIndex) {
-    VkCommandPoolCreateInfo createInfo = {
-        .sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO,
-        .flags = VK_COMMAND_POOL_CREATE_TRANSIENT_BIT,
-        .queueFamilyIndex = familyIndex,
-    };
-
-    VkCommandPool commandPool = 0;
-    VK_CHECK(vkCreateCommandPool(device, &createInfo, 0, &commandPool));
-
-    return commandPool;
-}
-int
-main() {
-
-    int ok = glfwInit();
-    assert(ok);
-
-    VkInstance instance = create_instance();
-    assert(instance);
-
-    VkPhysicalDevice physicalDevices[8];
-    uint32_t physicalDeviceCount = sizeof(physicalDevices) / sizeof(physicalDevices[0]);
-    VK_CHECK(vkEnumeratePhysicalDevices(instance, &physicalDeviceCount, physicalDevices));
-
-    VkPhysicalDevice physicalDevice = pick_physical_device(physicalDevices, physicalDeviceCount);
-    assert(physicalDevice);
-
-    uint32_t familyIndex = 0;
-    VkDevice device = create_device(instance, physicalDevice, &familyIndex);
-    assert(device);
-
-    GLFWwindow* window = glfwCreateWindow(1024, 768, "window without windows", 0, 0);
-    assert(window);
-
-    VkSurfaceKHR surface = create_surface(instance, window);
-    assert(surface);
-
-    int windowWidth = 0, windowHeight = 0;
-    glfwGetWindowSize(window, &windowWidth, &windowHeight);
-
-    VkSwapchainKHR swapchain = create_swapchain(device, surface, familyIndex, windowWidth, windowHeight);
-    assert(swapchain);
-
-    VkSemaphore acquireSemaphore = create_semaphore(device);
-    assert(acquireSemaphore);
-
-    VkSemaphore releaseSemaphore = create_semaphore(device);
-    assert(releaseSemaphore);
-
-    VkQueue queue = 0;
-    vkGetDeviceQueue(device, familyIndex, 0, &queue);
-
-    VkImage swapchainImages[3];
-    uint32_t swapchainImageCount = sizeof(swapchainImages) / sizeof(swapchainImages[0]);
-    VK_CHECK(vkGetSwapchainImagesKHR(device, swapchain, &swapchainImageCount, swapchainImages));
-
-    VkCommandPool commandPool = create_command_pool(device, familyIndex);
-    assert(commandPool);
-
-    VkCommandBufferAllocateInfo allocateInfo = {
-        .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO,
-        .commandPool = commandPool,
-        .level = VK_COMMAND_BUFFER_LEVEL_PRIMARY,
-        .commandBufferCount = 1,
-    };
-
-    VkCommandBuffer commandBuffer = 0;
-    VK_CHECK(vkAllocateCommandBuffers(device, &allocateInfo, &commandBuffer));
-
+    // Main loop
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
+  
+    
+    // Create new semaphore
+    VkSemaphoreCreateInfo semInfo = {VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO};
+    VK_CHECK(vkCreateSemaphore(device, &semInfo, NULL, &Semaphore));
+    
+    uint32_t imageIndex = 0;
+    VK_CHECK(vkAcquireNextImageKHR(device, swapchain, ~0ull,Semaphore, VK_NULL_HANDLE, &imageIndex));
+      VkPresentInfoKHR  presentInfo = { VK_STRUCTURE_TYPE_PRESENT_INFO_KHR };
+    presentInfo.swapchainCount = 1;
+    presentInfo.pSwapchains = &swapchain;
+    presentInfo.pImageIndices = &imageIndex;
+    VK_CHECK(vkQueuePresentKHR(queue, &presentInfo));
+    // Wait for the image to be presented
+    VK_CHECK(vkDeviceWaitIdle(device));
+    // Destroy the semaphore
+    vkDestroySemaphore(device, acquireSemaphore, NULL);
 
-        uint32_t imageIndex = 0;
-        VK_CHECK(vkAcquireNextImageKHR(device, swapchain, ~0ull, acquireSemaphore, VK_NULL_HANDLE, &imageIndex));
 
-        VK_CHECK(vkResetCommandPool(device, commandPool, 0));
-
-        VkCommandBufferBeginInfo beginInfo = {
-            .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
-            .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT,
-        };
-
-        VK_CHECK(vkBeginCommandBuffer(commandBuffer, &beginInfo));
-
-        VkClearColorValue color = {1, 0, 38, 1};
-
-        VkImageSubresourceRange range = {
-            .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
-            .levelCount = 1,
-            .layerCount = 1,
-        };
-
-        vkCmdClearColorImage(commandBuffer, swapchainImages[imageIndex], VK_IMAGE_LAYOUT_GENERAL, &color, 1, &range);
-
-        VK_CHECK(vkEndCommandBuffer(commandBuffer));
-
-        VkPipelineStageFlags submitStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
-
-        VkSubmitInfo submitInfo = {
-            .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
-            .waitSemaphoreCount = 1,
-            .pWaitSemaphores = &acquireSemaphore,
-            .pWaitDstStageMask = &submitStageMask,
-            .commandBufferCount = 1,
-            .pCommandBuffers = &commandBuffer,
-            .signalSemaphoreCount = 1,
-            .pSignalSemaphores = &releaseSemaphore,
-        };
-
-        vkQueueSubmit(queue, 1, &submitInfo, VK_NULL_HANDLE);
-
-        VkPresentInfoKHR presentInfo = {
-            .sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR,
-            .waitSemaphoreCount = 1,
-            .pWaitSemaphores = &releaseSemaphore,
-            .swapchainCount = 1,
-            .pSwapchains = &swapchain,
-            .pImageIndices = &imageIndex,
-        };
-
-        VK_CHECK(vkQueuePresentKHR(queue, &presentInfo));
-
-        VK_CHECK(vkDeviceWaitIdle(device));
     }
 
-    glfwDestroyWindow(window);
-
+    // Cleanup
+    vkDestroySemaphore(device, acquireSemaphore, 0);
+    vkDestroySemaphore(device, releaseSemaphore, 0);
+    vkDestroySurfaceKHR(instance, surface, 0);
+    vkDestroyDevice(device, 0);
     vkDestroyInstance(instance, 0);
+    glfwDestroyWindow(window);
+    glfwTerminate();
+     return 0;
 }
